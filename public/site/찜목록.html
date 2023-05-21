@@ -1,0 +1,258 @@
+<link rel="stylesheet" type="text/css" href="css/want.css">
+<link rel="stylesheet" type="text/css" href="css/beer.css">
+
+<header>
+
+    <div class="menu">
+        <a href="맥주홈.html">
+        <div class="logo">WebSite</div>
+        </a>
+        <div class="menu-items">
+            <a href="맥주홈.html">
+            <div class="menu-item">Home</div>
+            </a>
+            <a href="중간 서치페이지.html">
+            <div class="menu-item">Search</div>
+            </a>
+            <a href="뉴스페이지.html">
+            <div class="menu-item">News </div>
+            </a>
+            <div class="pick">
+            <a href="중간 서치페이지.html">
+                <div class="menu-item2"><img src="img/ic_search.png" style="width: 35px; height: 35px;"></div>
+            </a>
+            <a href="찜목록.html">
+            <div class="menu-item2"><img src="img/ic_fill_heart2.png" style="width: 35px; height: 35px;"></div>
+        </a>
+            <div class="menu-item2"><img src="img/ic_login.png" style="width: 75px; height: 30px;"></div>
+        </div>
+        </div>
+    
+</header>
+<body>
+<h1 style="text-align: center; font-size: 45px;">My Pick</h1>
+
+
+<div class="main">
+  <input type="radio" id="tab-1" name="show" checked/>
+  <input type="radio" id="tab-2" name="show" />
+
+  <div class="tab">
+    <label for="tab-1">맥주</label>
+    <label for="tab-2">뉴스</label>
+
+  </div>
+  <div class="content">
+    <div class="table">
+    <div class="content-dis1">
+      찜한 맥주는 <strong>최근</strong>부터 표시됩니다.
+      </div>
+      
+      <table border="0" class="check_board_tb" id="checkBoard">
+        <caption></caption>
+        <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col>
+            <col style="width:150px;">
+            
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" >전체n개</th>
+                <th scope="col" ><input type="checkbox"></th>
+                <th scope="col" >맥주</th>
+                <th scope="col" ><input type='button' value='찜 전체삭제' onclick='remove_children()' /></th>
+            </tr>
+        </thead>
+        <tbody id="parent">
+            <tr>
+                <td>1</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/10hungchungmangchung.jpg" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/stella2.png" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/klouddraft2.png" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/2terra.jpg" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/1664blanc.jpg" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/12yangpyung.jpg" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/budweiser2.png" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/budweiser2.png" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="checkbox"></td>
+                <td><img src="img/budweiser2.png" style="width: 150px; height: 150px;"></td>
+                <td>
+					<button type="button" class="btn_delete">삭제하기</button>
+				</td>
+            </tr>
+            <script src="js/delete.js"></script>
+        </tbody>
+       
+    </table>
+    </div>
+    <div class="content2">
+        <div class="content-dis2">
+            뉴스는 <strong>최근</strong>부터 표시됩니다.
+          </div>
+
+          <li>
+            <div class="thumb"> 
+                <div class="img-area">
+                <a href="">  
+                        <img src="img/20heineken2.png" style="width: 150px; height: 200px; " alt="">        
+                </a>    
+            </div>
+            <div class="txt-area">
+                <div class="cnt-header">
+                    <h3><a href="" class="btnView">맥주주천 웹사이트가 선정한 4월 이달의 맥주</a></h3>
+                </div>
+                <div class="txt-news"><a href="" class="btnView line02">매월 주목할 만한 맥주를 선정해 '이달의 맥주'로 소개하는 맥주추천 웹사이트가 4월에는 '새로움, 그 한끗 차이'를 주제로 테이스팅을 진행했다. 쉽게 볼 수 있는 종류로 익숙한 품종이지만 지역적...<br><br></a></div>
+                <div class="write-info">
+                    <em class="board-badge badge-white">국내해외뉴스</em>
+                    <span class="name"><a href="" class="btnReporter">안미영 편집장</a></span>
+                    <span class="date">2023.04.08</span>
+                </div>
+            </div>
+            </li>
+
+            <li>
+                <div class="thumb"> 
+                    <div class="img-area">
+                    <a href="">  
+                            <img src="img/20heineken2.png" style="width: 150px; height: 200px; " alt="">        
+                    </a>    
+                </div>
+                <div class="txt-area">
+                    <div class="cnt-header">
+                        <h3><a href="" class="btnView">맥주주천 웹사이트가 선정한 4월 이달의 맥주</a></h3>
+                    </div>
+                    <div class="txt-news"><a href="" class="btnView line02">매월 주목할 만한 맥주를 선정해 '이달의 맥주'로 소개하는 맥주추천 웹사이트가 4월에는 '새로움, 그 한끗 차이'를 주제로 테이스팅을 진행했다. 쉽게 볼 수 있는 종류로 익숙한 품종이지만 지역적...<br><br></a></div>
+                    <div class="write-info">
+                        <em class="board-badge badge-white">국내해외뉴스</em>
+                        <span class="name"><a href="" class="btnReporter">안미영 편집장</a></span>
+                        <span class="date">2023.04.07</span>
+                    </div>
+                </div>
+                </li>
+
+                <li>
+                    <div class="thumb"> 
+                        <div class="img-area">
+                        <a href="">  
+                                <img src="img/20heineken2.png" style="width: 150px; height: 200px; " alt="">        
+                        </a>    
+                    </div>
+                    <div class="txt-area">
+                        <div class="cnt-header">
+                            <h3><a href="" class="btnView">맥주주천 웹사이트가 선정한 4월 이달의 맥주</a></h3>
+                        </div>
+                        <div class="txt-news"><a href="" class="btnView line02">매월 주목할 만한 맥주를 선정해 '이달의 맥주'로 소개하는 맥주추천 웹사이트가 4월에는 '새로움, 그 한끗 차이'를 주제로 테이스팅을 진행했다. 쉽게 볼 수 있는 종류로 익숙한 품종이지만 지역적...<br><br></a></div>
+                        <div class="write-info">
+                            <em class="board-badge badge-white">국내해외뉴스</em>
+                            <span class="name"><a href="" class="btnReporter">안미영 편집장</a></span>
+                            <span class="date">2023.04.06</span>
+                        </div>
+                    </div>
+                    </li>
+
+                    <li>
+                        <div class="thumb"> 
+                            <div class="img-area">
+                            <a href="">  
+                                    <img src="img/20heineken2.png" style="width: 150px; height: 200px; " alt="">        
+                            </a>    
+                        </div>
+                        <div class="txt-area">
+                            <div class="cnt-header">
+                                <h3><a href="" class="btnView">맥주주천 웹사이트가 선정한 4월 이달의 맥주</a></h3>
+                            </div>
+                            <div class="txt-news"><a href="" class="btnView line02">매월 주목할 만한 맥주를 선정해 '이달의 맥주'로 소개하는 맥주추천 웹사이트가 4월에는 '새로움, 그 한끗 차이'를 주제로 테이스팅을 진행했다. 쉽게 볼 수 있는 종류로 익숙한 품종이지만 지역적...<br><br></a></div>
+                            <div class="write-info">
+                                <em class="board-badge badge-white">국내해외뉴스</em>
+                                <span class="name"><a href="" class="btnReporter">안미영 편집장</a></span>
+                                <span class="date">2023.04.05</span>
+                            </div>
+                        </div>
+                        </li>
+                      
+        </div>
+        </div>
+       
+        
+  
+    
+   
+     
+      
+   
+    <!-- //wrap -->
+        
+
+
+    <!-- javascript area -->
+    <!-- 최신버전으로 jQuery 사용 -->
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/style.js"></script>
+    <!-- //javascript area -->
+    <script src="./js/want.js"></script>
+    
+    </div>
+
+   
+
+ </div>
+</body>

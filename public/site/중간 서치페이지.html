@@ -1,0 +1,751 @@
+
+
+<link rel="stylesheet" type="text/css" href="css/search.css">
+<link rel="stylesheet" type="text/css" href="css/beer.css">
+<link rel="stylesheet" type="text/css" href="css/button.css">
+
+<style>
+    .star-input>.input,
+    .star-input>.input>label:hover,
+    .star-input>.input>input:focus+label,
+    .star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('img/grade_img.png')no-repeat;}
+    .star-input{ white-space:nowrap;width:225px;height:40px;line-height:30px;}
+    .star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
+    .star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
+    .star-input>.input.focus{outline:1px dotted #ddd;}
+    .star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
+    .star-input>.input>label:hover,
+    .star-input>.input>input:focus+label,
+    .star-input>.input>input:checked+label{background-size: 150px;background-position: 0 bottom;}
+    .star-input>.input>label:hover~label{background-image: none;}
+    .star-input>.input>label[for="p1"]{width:30px;z-index:5;}
+    .star-input>.input>label[for="p2"]{width:60px;z-index:4;}
+    .star-input>.input>label[for="p3"]{width:90px;z-index:3;}
+    .star-input>.input>label[for="p4"]{width:120px;z-index:2;}
+    .star-input>.input>label[for="p5"]{width:150px;z-index:1;}
+    .star-input>output{display:inline-block;width:40px; font-size:18px; vertical-align:middle;}
+   
+    </style>
+
+<header>
+
+    <div class="menu">
+        <a href="맥주홈.html">
+        <div class="logo">WebSite</div>
+    </a>
+        <div class="menu-items">
+            <a href="맥주홈.html">
+            <div class="menu-item">Home</div>
+        </a>
+        <a href="맥주홈.html">
+            <div class="menu-item">Search</div>
+            </a>
+            <a href="뉴스페이지.html">
+            <div class="menu-item">News </div>
+            </a>
+            <div class="pick">
+            <a href="중간 서치페이지.html">
+                <div class="menu-item2"><img src="img/ic_search.png" style="width: 35px; height: 35px;"></div>
+            </a>
+            <a href="찜목록.html">
+            <div class="menu-item2"><img src="img/ic_fill_heart2.png" style="width: 35px; height: 35px;"></div>
+        </a>
+            <div class="menu-item2"><img src="img/ic_login.png" style="width: 75px; height: 30px;"></div>
+        </div>
+        </div>
+   
+</header>
+<body>
+   
+    </header>
+    <div class="beer-recom box-shadow">
+		<p class="tit pop-open-btn"><span>추천<br>맥주보기</span><i class="ir"></i></p>
+        <a href="찜목록.html">
+		<ul id="uiFooterWineHistory">
+			<li class="recently-viewed">최근 본 상품</li>
+		</ul>
+    </a>
+		<p class="top"><i class="ir"></i><span>TOP</span></p>
+	</div>
+ <script>
+ const $topBtn = document.querySelector(".top");
+
+    // 버튼 클릭 시 맨 위로 이동
+    $topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });  
+    }</script>
+
+<div class="et" style="width: 100%; height: 700px; background-color: gray; margin: 0 auto;">
+    <div class="main-filter-clear">
+        <div class="sub-filter">
+        <div calss="filter-item" >
+            <div class="filter-item-box" style="border-radius: 10px 0px 0px 0px;">
+                <img src="img/ic_global.png" style="width: 50px; hight: 50px; margin-top: 3px; text-align: center; filter: drop-shadow(4px 4px 4px); opacity: 0.2; 
+              ">종류
+            </div>
+            <ul class="box-view">
+                <li>
+                    <div style="margin-top: 30px;">
+                        <input id="ch01-01" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_wineType', 'ch01-01', '국내', 'W01004');">
+                        <label for="ch01-01">국내</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <input id="ch01-02" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_wineType', 'ch01-02', '수입', 'W01002');">
+                        <label for="ch01-02">수입</label>
+                    </div>
+                </li>
+                <!-- 다른 체크박스 아이템 추가 가능 -->
+            </ul>
+
+        </div>
+
+
+
+        <div calss="filter-item">
+            <div class="filter-item-box">
+                <img src="img/ic_star.png" style="width: 50px; hight: 50px; margin-top: 3px; text-align: center;">국가
+            </div>
+            <ul class="box-view">
+                <li>
+                    <div class="" style="margin-top: 30px;">
+                        <input id="ch02-01" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_nation', 'ch02-01', '페일에일', 'P09000000');"><label
+                            for="ch02-01">페일에일</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch02-02" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_nation', 'ch02-02', '엑스트라', 'P15000000');"><label
+                            for="ch02-02">엑스트라</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch02-04" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_nation', 'ch02-04', '스타우트', 'P24000000');"><label
+                            for="ch02-04">스타우트</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch02-05" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_nation', 'ch02-05', '윗비어', 'P19000000');"><label
+                            for="ch02-05">윗비어</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch02-03" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_nation', 'ch02-03', '세종', 'P11000000');"><label
+                            for="ch02-03">세종</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch02-12" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_nation', 'ch02-12', '라거', 'P03000000');"><label
+                            for="ch02-12">라거</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div calss="filter-item">
+            <div class="filter-item-box">
+                <img src="img/ic_star.png" style="width: 50px; hight: 50px; margin-top: 3px; text-align: center;">가격
+            </div>
+            <ul class="box-view">
+                <li>
+                    <div class="" style="margin-top: 30px;">
+                        <input id="ch03-01" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_frequency', 'ch03-01', '3도미만', '0%~2.99%');"><label
+                            for="ch03-01">0%~3%(↓)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch03-02" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_frequency', 'ch03-02', '4도 미만', '3%~3.99%');"><label
+                            for="ch03-02">3%~3.99%</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch03-03" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_frequency', 'ch03-03', '5도 미만', '4%~4.99%');"><label
+                            for="ch03-03">4%~4.99%</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch03-04" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_frequency', 'ch03-04', '6도 미만', '5%~5.99%');"><label
+                            for="ch03-04">5%~5.99%</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch03-05" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_frequency', 'ch03-05', '7도 미만', '6%~6.99');"><label
+                            for="ch03-05">6%~6.99%</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="ch03-06" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_frequency', 'ch03-06', '7도 이상', '7%~');"><label
+                            for="ch03-06">7%(↑)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="filter-item">
+            <div class="filter-item-box">
+                <img src="img/ic_star.png" style="width: 50px; hight: 50px; margin-top: 3px; text-align: center;"> 음식매칭
+            </div>
+            <ul class="box-view">
+                <li>
+                    <div class="" style="margin-top: 30px;">
+                        <input id="fwf-01" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-01', '스테이크 (소)', '스테이크');"><label
+                            for="fwf-01">스테이크 (소)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-02" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-02', '삼겹살 (돼지)', '삼겹살');"><label
+                            for="fwf-02">삼겹살 (돼지)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-03" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-03', '치킨 (닭)', '치킨');"><label for="fwf-03">치킨
+                            (닭)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-04" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-04', '생선회 (생선)', '생선회');"><label
+                            for="fwf-04">생선회 (생선)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-05" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-05', '해산물 (조개)', '해산물');"><label
+                            for="fwf-05">해산물 (조개)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-06" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-06', '샐러드', '샐러드');"><label
+                            for="fwf-06">샐러드</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-07" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-07', '튀김', '튀김');"><label
+                            for="fwf-07">튀김</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-08" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-08', '치즈', '치즈');"><label
+                            for="fwf-08">치즈</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-09" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-09', '과일', '과일');"><label
+                            for="fwf-09">과일</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-10" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-10', '디저트', '디저트');"><label
+                            for="fwf-10">디저트</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-11" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-11', '족발 (한식)', '족발');"><label for="fwf-11">족발
+                            (한식)</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <input id="fwf-12" name="chCategory" type="checkbox"
+                            onclick="mainCategoryClick('type_food', 'fwf-12', '피자 (양식)', '피자');"><label for="fwf-12">피자
+                            (양식)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="filter-item">
+            <div class="filter-item-box" style="border-radius: 0px 10px 0px 0px;">
+                <img src="img/ic_star.png" style="width: 50px; hight: 50px; margin-top: 3px; text-align: center;">맥주 스타일
+            </div>
+            <ul class="box-view">
+                <div class="" style="padding: 20px;; color: brown;">1~5까지(0.5가능)</div>
+                <div class="filter-grade-wrapper">
+                    <div class="filter-grade-sweet">
+                        <div style="text-align: center;font-weight: 700; margin-bottom: 10px;">당도</div>
+                        
+                        <span class="taste1">
+                            ●●●●●
+                            <span>●●●●●</span>
+                            <input type="range"  name="taste1" oninput="drawtaste(this)" value="1" step="1" min="0" max="10">
+                          </span>
+                          
+
+
+
+
+
+                       <!--
+                          <span class="star-input">
+                            <span class="input">
+                                <input type="radio" name="star-input" value="1" id="p1">
+                                <label for="p1">1</label>
+                                <input type="radio" name="star-input" value="2" id="p2">
+                                <label for="p2">2</label>
+                                <input type="radio" name="star-input" value="3" id="p3">
+                                <label for="p3">3</label>
+                                <input type="radio" name="star-input" value="4" id="p4">
+                                <label for="p4">4</label>
+                                <input type="radio" name="star-input" value="5" id="p5">
+                                <label for="p5">5</label>
+                              </span>
+                              <output for="star-input"><b>0</b>점</output>						
+                        </span>
+                        <script src="js/jquery-1.11.3.min.js"></script>
+                        <script src="js/star.js"></script>
+-->
+                         
+                    <!--
+                        <div>
+                            <input type="checkbox" id="sweet1" name="chCategory" value="1">
+                            <label for="sweet1">당도1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sweet2" name="chCategory" value="2">
+                            <label for="sweet2">당도2</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="sweet3" name="chCategory" value="3">
+                            <label for="sweet3">당도3</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sweet4" name="chCategory" value="4">
+                            <label for="sweet4">당도4</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="sweet5" name="chCategory" value="5">
+                            <label for="sweet5">당도5</label>
+                        </div>
+                        -->
+                    </div>    
+
+                        
+                            <div class="filter-grade-body">
+                                <div style="text-align: center;font-weight: 700; margin-bottom: 10px; margin-top: 10px;">쓴맛</div>
+                                <span class="taste2">
+                                    ●●●●●
+                                    <span>●●●●●</span>
+                                    <input type="range"  name="taste2" oninput="drawtaste2(this)" value="1" step="1" min="0" max="10">
+                                  </span>
+                            <!-- 
+                                <div>
+                                    <input type="checkbox" id="acidity1" name="chCategory" value="1">
+                                    <label for="acidity1">산미1</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="acidity2" name="chCategory" value="2">
+                                    <label for="acidity2">산미2</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" id="acidity3" name="chCategory" value="3">
+                                    <label for="acidity3">산미3</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="acidity4" name="chCategory" value="4">
+                                    <label for="acidity4">산미4</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="checkbox" id="acidity5" name="chCategory" value="5">
+                                    <label for="acidity5">산미5</label>
+                                </div>
+                                -->   
+                            </div>    
+
+                                
+                                    <div class="filter-grade-acidity">
+                                        <div style="text-align: center;font-weight: 700; margin-bottom: 10px; margin-top: 10px;">산미</div>
+                                        <span class="taste3">
+                                            ●●●●●
+                                            <span>●●●●●</span>
+                                            <input type="range"  name="taste3" oninput="drawtaste3(this)" value="1" step="1" min="0" max="10">
+                                          </span>
+                                          
+                                        <!--
+                                        <div>
+                                            <input type="checkbox" id="body1" name="chCategory" value="1">
+                                            <label for="body1">바디1</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="body2" name="chCategory" value="2">
+                                            <label for="body2">바디2</label>
+                                        </div>
+                                        
+                                        <div>
+                                            <input type="checkbox" id="body3" name="chCategory" value="3">
+                                            <label for="body3">바디3</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="body4" name="bodyness" value="4">
+                                            <label for="body4">바디4</label>
+                                        </div>
+                                        
+                                        <div>
+                                            <input type="checkbox" id="body5" name="chCategory" value="5">
+                                            <label for="body5">바디5</label>
+                                        </div>
+                                        -->
+                                    </div>   
+
+                                    <!-- 별점에 색넣는 js --> 
+                                    <script> 
+                                        const drawtaste = (target) => {
+                                            
+                                          document.querySelector(`.taste1 span`).style.width = `${target.value * 10}%`;
+                                         
+                                        }
+                                        const drawtaste2 = (target) => {
+                                          document.querySelector(`.taste2 span`).style.width = `${target.value * 10}%`;
+                                        }
+                                        const drawtaste3 = (target) => {
+                                          document.querySelector(`.taste3 span`).style.width = `${target.value * 10}%`;
+                                        }
+                                      </script>
+                                      <script>
+                                        function resetFilters() {
+                                          const checkboxes = document.getElementsByName("chCategory");
+                                          for (let i = 0; i < checkboxes.length; i++) {
+                                            checkboxes[i].checked = false;
+                                            
+                                          }
+                                          
+                                          // 필터링을 초기화하는 코드를 여기에 작성합니다.
+                                          // ...
+                                        
+                                        // 별지우는 js
+                    
+                                        //당도
+                                        const taste1 = document.querySelector('.taste1 span');
+                                        taste1.style.width = '0%';
+                                        const rangeInput1 = document.querySelector('input[name="taste1"]');
+                                         rangeInput1.value = 0;
+                    
+                                        //쓴맛
+                                         const taste2 = document.querySelector('.taste2 span');
+                                         taste2.style.width = '0%';
+                                        const rangeInput2 = document.querySelector('input[name="taste2"]');
+                                         rangeInput2.value = 0;
+                                        //산미
+                                         const taste3 = document.querySelector('.taste3 span');
+                                         taste3.style.width = '0%';
+                                        const rangeInput3 = document.querySelector('input[name="taste3"]');
+                                         rangeInput3.value = 0;
+                                        }
+                                        
+                                        </script>
+
+            </ul>
+        </div>
+        </div>
+    
+        <div class="filter-item-collect">
+            <ul id="search-display-ui"></ul>
+            <div class="abs"> <button class="w-btn-outline w-btn-red-outline" type="button" onclick="resetFilters()" style="margin: 10px;">
+                초기화
+            </button>
+                
+                
+
+
+
+
+                <button type="button" class="w-btn-outline w-btn-orange-outline" onclick="mainCategoryGo();">결과보기 <i class="icon-view"></i></button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="rel clear">
+        <input type="hidden" id="inputTotalSearchHidden">
+        <p class="input-box"><input type="text" id="inputTotalSearch" placeholder="맥주의 모든 것을 검색하세요"
+                onkeydown="checkTotalSearch(event);" onkeyup="onEditKeyword();">
+            <!-- <button type="button" class="btn-clear" onclick=""><span class="material-icons">close</span></button> -->
+            <button type="button" class="btn-search" onclick="goTotalSearch('inputTotalSearch');">검색</button>
+        </p>
+        <div class="search-rel-wrap" style="display:none;" tabindex="0">
+            <ul class="search-rel-list">
+            </ul>
+        </div>
+    </div>
+<!--
+    <fieldset class="rate">
+        <input type="radio" id="rating10" name="rating" value="10"><label for="rating10" title="5점"></label>
+        <input type="radio" id="rating9" name="rating" value="9"><label class="half" for="rating9" title="4.5점"></label>
+        <input type="radio" id="rating8" name="rating" value="8"><label for="rating8" title="4점"></label>
+        <input type="radio" id="rating7" name="rating" value="7"><label class="half" for="rating7" title="3.5점"></label>
+        <input type="radio" id="rating6" name="rating" value="6"><label for="rating6" title="3점"></label>
+        <input type="radio" id="rating5" name="rating" value="5"><label class="half" for="rating5" title="2.5점"></label>
+        <input type="radio" id="rating4" name="rating" value="4"><label for="rating4" title="2점"></label>
+        <input type="radio" id="rating3" name="rating" value="3"><label class="half" for="rating3" title="1.5점"></label>
+        <input type="radio" id="rating2" name="rating" value="2"><label for="rating2" title="1점"></label>
+        <input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1" title="0.5점"></label>
+
+    </fieldset>
+    -->
+    <div class="view-rel">   
+        <div class="search-man" style="width: 950px; margin: 0 auto;">
+        <div class="search-end" style="text-align: left; font-size: 25px; ">검색결과</div>
+        <div class="" style="height: 10px; border-bottom: 2px solid yellow;  border-top: 2px solid yellow;"></div>
+    </div>
+        
+        <div class="beer-list">
+        <div class="thumb">        
+            <a href="">
+                <img src="img/20heineken2.png" style="width: 150px; height: 210px; margin-top: 0 auto;" alt="">
+            </a>    
+        </div>    
+        <div class="txt-area">        
+            <div class="cnt-header">            
+                <p class="winery" style=""><a href="">하이네켄<img src="img/ic_check1.png" style="width: 25px; height: 25px; vertical-align: top;"></a></p>
+                <h3>                
+                    <a href="" class="btnView">하이네켄 , 오리지날                 
+                    <p class="wine-name-en">Heineken, Original</p>                
+                </a>            
+            </h3>        
+            </div>        
+
+            <span class="country">네덜란드(Nederlanden)</span>            
+            <span class="nation">, 라거(Lager)</span>       
+               
+             <div class="rate">
+                <em style="width: 70%;" ></em>    <div class="rate-text">(3.5)</div>  
+            </div> 
+
+         <div class="heart">
+        <img id="img1" src="img/ic_heart.png" style="width:30px; height: 30px;">
+        <img id="img2" src="img/ic_fill_heart.png" style="width: 30px; height: 30px;  ">
+         </div>
+     </div>
+     </div>
+
+
+
+         
+    <div class="beer-list">
+    <div class="thumb">        
+        <a href="">
+            <img src="img/20heineken2.png" style="width: 150px; height: 210px; margin-top: 0 auto;" alt="">
+        </a>    
+    </div>    
+    <div class="txt-area">        
+        <div class="cnt-header">            
+            <p class="winery"><a href="">하이네켄&nbsp;Heineken</a></p>            
+            <h3>                
+                <a href="" class="btnView">하이네켄 , 오리지날                 
+                <p class="wine-name-en">Heineken, Original</p>                
+            </a>            
+        </h3>        
+        </div>        
+            
+        <span class="country">네덜란드(Nederlanden)</span>            
+        <span class="nation">, 라거(Lager)</span>       
+           
+
+         <div class="rate">
+            <em style="width: 80%;" ></em>    <div class="rate-text">(4.0)</div>  
+        </div> 
+
+        <div class="heart">
+        <img id="img3" src="img/ic_heart.png" style="width:30px; height: 30px;">
+        <img id="img4" src="img/ic_fill_heart.png" style="width: 30px; height: 30px;  ">
+        </div>
+</div>
+</div>
+
+
+         
+    <div class="beer-list">
+    <div class="thumb">        
+        <a href="">
+            <img src="img/20heineken2.png" style="width: 150px; height: 210px; margin-top: 0 auto;" alt="">
+        </a>    
+    </div>    
+    <div class="txt-area">        
+        <div class="cnt-header">            
+            <p class="winery"><a href="">하이네켄&nbsp;Heineken</a></p>            
+            <h3>                
+                <a href="" class="btnView">하이네켄 , 오리지날                 
+                <p class="wine-name-en">Heineken, Original</p>                
+            </a>            
+        </h3>        
+        </div>                    
+        <span class="country">네덜란드(Nederlanden)</span>            
+        <span class="nation">, 라거(Lager)</span>       
+           
+
+         <div class="rate">
+            <em style="width: 80%;" ></em>    <div class="rate-text">(4.0)</div>  
+        </div> 
+     
+        <div class="heart">
+            <img id="img5" src="img/ic_heart.png" style="width:30px; height: 30px;">
+            <img id="img6" src="img/ic_fill_heart.png" style="width: 30px; height: 30px;  ">
+             </div>
+</div>
+</div>
+
+
+         
+    <div class="beer-list">
+    <div class="thumb">        
+        <a href="">
+            <img src="img/20heineken2.png" style="width: 150px; height: 210px; margin-top: 0 auto;" alt="">
+        </a>    
+    </div>    
+    <div class="txt-area">        
+        <div class="cnt-header">            
+            <p class="winery"><a href="">하이네켄&nbsp;Heineken</a></p>            
+            <h3>                
+                <a href="" class="btnView">하이네켄 , 오리지날                 
+                <p class="wine-name-en">Heineken, Original</p>                
+            </a>            
+        </h3>        
+        </div>        
+      
+        <span class="country">네덜란드(Nederlanden)</span>            
+        <span class="nation">, 라거(Lager)</span>       
+           
+
+         <div class="rate">
+            <em style="width: 80%;" ></em>    <div class="rate-text">(4.0)</div>  
+        </div> 
+        <div class="heart">
+            <img id="img7" src="img/ic_heart.png" style="width:30px; height: 30px;">
+            <img id="img8" src="img/ic_fill_heart.png" style="width: 30px; height: 30px;  ">
+             </div>
+      
+        
+</div>
+</div>
+<div class="beer-list">
+    <div class="thumb">        
+        <a href="">
+            <img src="img/20heineken2.png" style="width: 150px; height: 210px; margin-top: 0 auto;" alt="">
+        </a>    
+    </div>    
+    <div class="txt-area">        
+        <div class="cnt-header">            
+            <p class="winery"><a href="">하이네켄&nbsp;Heineken</a></p>            
+            <h3>                
+                <a href="" class="btnView">하이네켄 , 오리지날                 
+                <p class="wine-name-en">Heineken, Original</p>                
+            </a>            
+        </h3>        
+        </div>        
+      
+        <span class="country">네덜란드(Nederlanden)</span>            
+        <span class="nation">, 라거(Lager)</span>       
+           
+
+         <div class="rate">
+            <em style="width: 80%;" ></em>    <div class="rate-text">(4.0)</div>  
+        </div> 
+        <div class="heart">
+            <img id="img9" src="img/ic_heart.png" style="width:30px; height: 30px;">
+            <img id="img10" src="img/ic_fill_heart.png" style="width: 30px; height: 30px;  ">
+             </div>
+      
+        
+</div>
+</div>
+
+
+               
+    
+        <!--<div class="wine-qr">       
+            <a href="javascript:downloadQR(173945);">
+                <img src="/02_images/qrcode.png" alt="QR code">
+            </a>    
+        </div>
+    -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="js/heart.js"></script>
+    </div>
+</body>
+
+    <footer class="footer clearfix">
+        <aside class="main-bottom-links inner rel">
+            <div class="footer-side">
+                <div class="sns-link">
+                    <div class="sns-namu"><a href="https://namu.wiki/w/%EB%A7%A5%EC%A3%BC" target="_blank"><img
+                                src="img/namu.png"></a></div>
+    
+                    <div class="sns-wikipedia"><a href="https://ko.wikipedia.org/wiki/%EB%A7%A5%EC%A3%BC"
+                            target="_blank"><img src="img/Wikipedia.png"></a></div>
+    
+                    <div class="sns-beeref"><a href="https://steptohealth.co.kr/9-benefits-of-beer/" target="_blank"><img
+                                src="img/beeref.png"></a></div>
+    
+                    <div class="sns-youtube"><a href="https://www.youtube.com/results?search_query=%EB%A7%A5%EC%A3%BC"
+                            target="_blank"><img src="img/YouTube.png"></a></div>
+                </div>
+                <div class="info-tel">
+                    <div class="txt">맥주 관련 정보문의/행사문의</div>
+                    <div class="tel"><a href="tel:010.1324.5789">010.1324.5789</a></div>
+                </div>
+            </div>
+    
+            <div class="footer-link">
+                <div class="link-1"><a href="/17_company/company_introduction.html">회사소개 |</a></div>
+                <div class="link-2"><a href="/17_company/company_service.html">회원사서비스안내 |</a></div>
+                <div class="link-3"><a href="/17_company/company_service.html">광고제휴안내 |</a></div>
+                <div class="link-4"><a href="/17_company/company_terms.html">이용약관 |</a></div>
+                <div class="link-5"><a href="/17_company/company_privacy.html">개인정보처리방침</a></div>
+            </div>
+            <div class="footer-info">
+                <div class="footer-company">㈜맥주WebSite닷컴 대표이사 : 장관영 사업자등록번호 : 201-70-81096 맥주WebSite미디어 인터넷신문등록번호 : 서울특별시
+                    아메리카노는 투샷이 국룰
+                    <br>등록연월일 : 2023.03.15 주소 : 서울시 관악구 여의도역 3번출구 개인정보 관리책임자 : 알빠노 청소년보호책임자 : 장광명. 발행.편집인 : Everybody
+                </div>
+            </div>
+            <div class="copyright">Copyright © BEERWebsite.COM. All rights reserved since 1998</div>
+        </aside>
+    
+    </footer>

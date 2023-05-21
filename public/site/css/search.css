@@ -1,0 +1,655 @@
+
+/* 폰트 start */
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+body{
+    font-family: 'TheJamsil5Bold';
+}
+/* 폰트  end */
+
+input {
+    width:15px;
+    height:15px;
+   
+  }
+
+ul {
+    padding-inline-start: 0px;
+}
+
+
+.rel {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+#inputTotalSearch {
+    flex: 1;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.btn-clear,
+.btn-search {
+    height: 40px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+}
+
+.btn-clear {
+    background-color: #ccc;
+    padding: 0 12px;
+}
+
+.btn-search {
+    background-color: #f90;
+    padding: 0 20px;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    background-color: #f2f2f2;
+}
+
+.hcontainer {
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: orange;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero .button:hover {
+    background-color: #ff7f00;
+}
+
+.hero .button:focus {
+    outline: none;
+}
+
+.hero .button:active {
+    transform: scale(0.98);
+}
+
+.hero a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero a:hover {
+    text-decoration: underline;
+}
+
+.hero a.button {
+    margin-top: 2rem;
+}
+
+.et{
+    background-image: url('../img/summer3.png');
+}
+
+.main-filter-clear{
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px;
+    margin-bottom: 60px;
+   margin-left: 400px;
+    
+}
+
+.sub-filter{
+    display: flex;
+    
+    
+}
+
+
+
+.filter-item-box {
+    font-size: 1rem;
+    background: #fbb117;
+    text-align: center;
+    height: 53px;
+    line-height: 53px;
+   width: 180px;
+   border-right: 1px solid #999;
+  
+}
+
+.box-view {
+   
+   list-style: none;
+    text-align: center;
+    width: 180px;
+    height: 450px;
+    margin: 0;
+    border-right: 1px solid #999;
+   background-color: #fff;
+   
+}
+
+.box-view li {
+    padding: 5px;
+   
+}
+
+.box-view li:last-child {
+    border-bottom: none;
+}
+
+/*.box-view label {
+    margin-left: 10px;
+}
+*/
+.filter-grade {
+    text-align: center;
+}
+
+.filter-grade a {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+
+.filter-grade a:hover {
+    background-color: #eee;
+}
+
+.filter-grade a.active {
+    background-color: #666;
+    color: #fff;
+}
+
+.filter-grade div {
+    margin-bottom: 10px;
+}
+
+.filter-grade div:first-child {
+    margin-top: 10px;
+}
+
+.filter-grade div:last-child {
+    margin-bottom: 0;
+}
+
+.filter-grade label {
+
+    margin-left: 10px;
+}
+
+.filter-grade input[type="checkbox"] {
+    display: none;
+}
+
+.filter-grade input[type="checkbox"]+label:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.filter-grade input[type="checkbox"]:checked+label:before {
+    content: "\2713";
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+    line-height: 12px;
+}
+
+.filter-grade-wrapper div.filter-grade-sweet input[type="checkbox"]+label:before {
+    border-color: #f46e42;
+}
+
+.filter-grade-wrapper div.filter-grade-sweet input[type="checkbox"]:checked+label:before {
+    background-color: #f46e42;
+}
+
+.filter-grade-wrapper div.filter-grade-acidity input[type="checkbox"]+label:before {
+    border-color: #4caf50;
+}
+
+.filter-grade-wrapper div.filter-grade-acidity input[type="checkbox"]:checked+label:before {
+    background-color: #4caf50;
+}
+
+.filter-grade-wrapper div.filter-grade-body input[type="checkbox"]+label:before {
+    border-color: #2196f3;
+}
+
+.filter-grade-wrapper div.filter-grade-body input[type="checkbox"]:checked+label:before {
+    background-color: #2196f3;
+}
+
+.filter-grade-sweet {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.filter-grade-acidity {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.filter-grade-body {
+    border-bottom: 1px solid #ccc;
+    
+    padding-bottom: 0;
+}
+
+.filter-grade-sweet label {
+    color: #f46e42;
+}
+
+.filter-grade-acidity label {
+    color: #4caf50;
+
+}
+
+.filter-grade-body label {
+    color: #2196f3;
+}
+
+
+
+
+
+
+/* 맛정도에 색넣는 css 당도 쓴맛 산미 */
+
+.filter-grade-wrapper {
+    margin-top: 10px;
+}
+
+.taste1 {
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+  }
+  
+  .taste1 input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .taste1 span {
+    width: 0;
+    position: absolute; 
+    left: 0;
+    color: red;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .taste2 {
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+  }
+  
+  .taste2 input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .taste2 span {
+    width: 0;
+    position: absolute; 
+    left: 0;
+    color: #cccc33;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .taste3 {
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+  }
+  
+  .taste3 input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .taste3 span {
+    width: 0;
+    position: absolute; 
+    left: 0;
+    color: blue;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .filter-item-collect {
+        position: relative;
+        display: block;
+        clear: both;
+        float: none;
+        min-height: 90px;
+        width: 900px;
+        padding: 14px 220px 13px 32px;
+        border-top: 1px solid #ebebeb;
+        background-color: #fff;
+        border-radius: 0px 0px 10px 10px;
+    
+  }
+
+  .filter-item-collect .abs {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+}
+.abs {
+    position: absolute !important;
+}
+
+  /* 맛정도에 색넣는 css 당도 쓴맛 산미 */
+/*
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+       .rate { display: inline-block;border: 0;margin-right: 15px;}
+       .rate{background: url(../img/star_bg02.png) no-repeat;width: 121px;height: 20px;position: relative;}
+.rate > input {display: none;}
+.rate > label {float: right;color: #ddd}
+.rate > label:before {display: inline-block;font-size: 1rem;padding: .3rem .2rem;margin: 0;cursor: pointer;font-family: FontAwesome;content: "\f005 ";}
+.rate .half:before {content: "\f089 "; position: absolute;padding-right: 0;}
+.rate input:checked ~ label, 
+.rate label:hover,.rate label:hover ~ label { color: #f73c32 !important;  } 
+.rate input:checked + .rate label:hover,
+.rate input input:checked ~ label:hover,
+.rate input:checked ~ .rate label:hover ~ label,  
+.rate label:hover ~ input:checked ~ label { color: #f73c32 !important;  }  */
+
+.board-list.board-list-wine li .thumb {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 148px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.board-list.board-list-wine li .thumb {
+    width: 34%;
+    max-width: 120px;
+    margin-right: 12px;
+}
+
+
+.view-rel {
+   
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    
+}
+
+
+.beer-list {
+    display: flex;
+    border-bottom: 1px solid #666;
+    width: 650px;
+    margin-left: 25%;
+    
+}
+
+
+.rate{background: url(../img/star_bg02.png) no-repeat;width: 121px;height: 20px;position: relative;}
+.rate em{position: absolute;background: url(../img/star02.png);width: auto;height: 20px;}
+.rate-text{
+   
+   text-align: right;
+   white-space: normal;
+   margin-left: 130px;
+}
+
+.heart{
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.text-area img {
+    text-align: right;
+}
+
+.txt-area {
+    width: 100%;
+    margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 푸터 속성 start */
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 200px 20px 300px;
+  }
+  
+  
+  
+  .main-bottom-links {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  
+  
+  .sns-link a{
+      position: relative;
+      float: right;
+      margin-right: 10px;
+      padding: 10px;
+      margin-top: 20px;
+  
+  }
+  
+  .sns-link img{
+      display: block;
+      width: 34px;
+      height: 34px;
+      border-radius: 4px;
+      text-indent: -9999em;
+  }
+  
+  .sns-namu {
+     
+      margin-right: 10px;
+  }
+  .sns-wikipedia {
+     
+     margin-right: 10px;
+  }
+  .sns-beeref {
+     
+     margin-right: 10px;
+  }
+  .sns-youtube {
+     
+     margin-right: 10px;
+  }
+  
+  
+  
+  .info-tel {
+      position: relative;
+      float: right;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 20px;
+  }
+  
+  .tel {
+      font-weight: 700;
+  }
+  
+  
+  .footer-link {
+    display: flex;
+    
+   
+  }
+  
+  
+  /* 회사소개 ~ 개인정보처리 방침 start */
+  
+  .footer-link a {
+      position: relative;
+      float: left;
+  }
+  
+  .link-1 {
+      margin-right: 10px;
+      
+  
+  }
+  .link-2 {
+      margin-right: 10px;
+  
+  }
+  .link-3 {
+      margin-right: 10px;
+  
+  }
+  .link-4 {
+      margin-right: 10px;
+  
+  }
+  .link-5 {
+      margin-right: 10px;
+  
+  }
+  
+  /* 회사소개 ~ 개인정보처리 방침 end */
+  
+  
+  /*~주 맥주 copyrigt 까지 타이핑 속성 start */
+  .footer-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 20px;
+    
+  }
+  
+  .copyright {
+    width: 100%;
+    
+    font-size: 12px;
+    color: #777;
+   
+  }
+  
+  
+  .rel {
+      position: relative;
+  }
+  
+  aside {
+      display: block;
+  }
+  
+  /*~주 맥주 copyrigt 까지 타이핑 속성 end */
+  
+  
+  /* 맥주 관련 정보문의 및 전화번호 start */
+  
+  .txt {
+      text-align: right;
+  }
+  .tel {
+      text-align: center;
+  }
+  
+  /* 맥주 관련 정보문의 및 전화번호  end */
+  a {
+      border: 0;
+      color: #262626;
+      text-decoration: none;
+  }
+  
+  
+  /* 푸터 속성 end */
+  

@@ -1,0 +1,171 @@
+<link rel="stylesheet" type="text/css" href="css/beer.css">
+<link rel="stylesheet" type="text/css" href="css/information.css">
+<header>
+
+    <div class="menu">
+        <a href="맥주홈.html">
+        <div class="logo">WebSite</div>
+        </a>
+        <div class="menu-items">
+            <a href="맥주홈.html">
+            <div class="menu-item">Home</div>
+            </a>
+            <a href="중간 서치페이지.html">
+            <div class="menu-item">Search</div>
+            </a>
+            <a href="뉴스페이지.html">
+            <div class="menu-item">News </div>
+            </a>
+            <div class="pick">
+            <a href="중간 서치페이지.html">
+                <div class="menu-item2"><img src="img/ic_search.png" style="width: 35px; height: 35px;"></div>
+            </a>
+            <a href="찜목록.html">
+            <div class="menu-item2"><img src="img/ic_fill_heart2.png" style="width: 35px; height: 35px;"></div>
+        </a>
+            <div class="menu-item2"><img src="img/ic_login.png" style="width: 75px; height: 30px;"></div>
+        </div>
+        </div>
+    
+</header>
+
+<body>
+
+    <div class="beer-recom box-shadow">
+		<p class="tit pop-open-btn"><span>추천<br>맥주보기</span><i class="ir"></i></p>
+        <a href="찜목록.html">
+		<ul id="uiFooterWineHistory">
+			<li class="recently-viewed">최근 본 상품</li>
+		</ul>
+    </a>
+		<p class="top"><i class="ir"></i><span>TOP</span></p>
+	</div>
+ <script>
+ const $topBtn = document.querySelector(".top");
+
+    // 버튼 클릭 시 맨 위로 이동
+    $topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });  
+    }</script>
+
+  
+    <div class="information">
+       
+        <div class="in-img"><img src="img/10hungchungmangchung.jpg" style="width: 500px; height: 500px; padding: 100px; "></div>
+
+        <li>
+        <div class="img-name">Cass<img src="img/ic_check1.png" style="width: 25px; height: 25px; vertical-align: top; "></div> <div class="check"></div>
+        <div class="rate">
+            <em style="width: 60%;" ></em>    <div class="rate-text">(3.0)<br><br></div>  
+        </div> 
+
+        <div class="in-text">한국 | 청주 서원구 현도면<br> 에서 제도된 어쩌구...<br>라거(Lager)</div>
+
+        <div class="info2">
+
+            <dlv class="infost">
+            상세정보
+        </dlv>
+
+        </div>
+        <div class="heart">
+            <div class="which">
+              <img id="img9" src="img/ic_heart.png" style="width:50px; height: 50px;">
+              <img id="img10" src="img/ic_fill_heart.png" style="width: 50px; height: 50px;  ">
+        </div>
+             </div>
+            </li>
+        
+
+
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="js/heart.js"></script>
+
+    <div class="pro-title">
+        이 제품을 본 사용자들이 본 제품
+    </div>
+
+<div class="product">
+    <div class="pro">
+       <div class="pro-img">
+       <img src="img/2terra.jpg" style="width: 150px;height: 150px;">
+       </div>
+      <div class="pro-text">
+       테라는 맛있다<br>테라는 시원하다<br>테라 드쉴?
+      </div>
+    </div>
+    <div class="pro">
+        <div class="pro-img">
+         <img src="img/2terra.jpg" style="width: 150px;height: 150px;">
+        </div>
+        <div class="pro-text">
+         테라는 맛있다<br>테라는 시원하다<br>테라 드쉴?
+        </div>
+    </div>
+    <div class="pro">
+        <div class="pro-img">
+             <img src="img/2terra.jpg" style="width: 150px;height: 150px;">
+            </div>
+            <div class="pro-text">
+             테라는 맛있다<br>테라는 시원하다<br>테라 드쉴?
+            </div>
+    </div>
+    <div class="pro">
+                <div class="pro-img">
+                 <img src="img/2terra.jpg" style="width: 150px;height: 150px;">
+                </div>
+                <div class="pro-text">
+                 테라는 맛있다<br>테라는 시원하다<br>테라 드쉴?
+                </div>
+    </div>
+    <div class="pro">
+        <div class="pro-img">
+         <img src="img/2terra.jpg" style="width: 150px;height: 150px;">
+        </div>
+        <div class="pro-text">
+         테라는 맛있다<br>테라는 시원하다<br>테라 드쉴?
+        </div>
+</div>
+
+
+    
+   
+
+      
+    </div>
+
+
+    </div>
+
+    <div class="main">
+        <input type="radio" id="tab-1" name="show" checked/>
+        <input type="radio" id="tab-2" name="show" />
+        <input type="radio" id="tab-3" name="show" />
+        <input type="radio" id="tab-4" name="show" />
+        <div class="tab">
+          <label for="tab-1" style="border-right: 1px solid #333;">상세정보</label>
+          <label for="tab-2" style="border-right: 1px solid #333;">리뷰</label>
+          <label for="tab-3" style="border-right: 1px solid #333;">관련상품</label>
+          <label for="tab-4" style="border-right: 1px solid #333;">제조사</label>
+        </div>
+        <div class="content">
+          <div class="content-dis">
+            Concept의 body안 내용을 넣으세요.
+          </div>
+          <div class="content-dis">
+            Color의 body안 내용을 넣으세요.
+          </div>
+          <div class="content-dis">
+            Textile의 body안 내용을 넣으세요.
+          </div>
+          <div class="content-dis">
+            Design의 body안 내용을 넣으세요.
+          </div>
+          <div>
+          </div>
+
+</body>

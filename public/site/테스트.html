@@ -1,0 +1,73 @@
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<script type="text/javascript">
+let json = { // json : 맨앞에 [], {} 된다.
+	       "quiz": {
+	           "sport": {
+	               "q1": {
+	                   "question": "Which one is correct team name in NBA?",
+	                   "options": [
+	                       "New York Bulls",
+	                       "Los Angeles Kings",
+	                       "Golden State Warriros",
+	                       "Huston Rocket"
+	                   ],
+	                   "answer": "Huston Rocket"
+	               }
+	           },
+	           "maths": {
+	               "q1": {
+	                   "question": "5 + 7 = ?",
+	                   "options": [
+	                       "10",
+	                       "11",
+	                       "12",
+	                       "13"
+	                   ],
+	                   "answer": "12"
+	               },
+	               "q2": {
+	                   "question": "12 - 8 = ?",
+	                   "options": [
+	                       "1",
+	                       "2",
+	                       "3",
+	                       "4"
+	                   ],
+	                   "answer": "4"
+	               }
+	           }
+		
+			   
+	       },
+		   "person": {
+	               "p1": {
+	                   "infomation": [
+	                       "정수동",
+	                        24,
+	                       "서울시",
+	                       181
+	                   ],
+	               },
+	               "p2": {
+	                   "infomation2": [
+					   "name : ","심청",
+       "age : ",14,
+       "address : ","강원시",
+       "height : ",155.4
+	                   ],
+	               }
+	           }
+		   
+		   
+	   };
+document.getElementById("demo1").innerHTML = json.quiz.sport.q1.question[0];
+document.getElementById("demo2").innerHTML = json.quiz["sport"].q1.question;
+document.getElementById("demo3").innerHTML = json.quiz.sport.q1.options[1];
+document.getElementById("demo4").innerHTML = json.quiz.maths.q1.options[2];
+document.getElementById("demo5").innerHTML = json.person.p1.infomation;
+document.getElementById("demo5").innerHTML = json.person.p2.infomation2;
+</script>

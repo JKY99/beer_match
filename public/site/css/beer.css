@@ -1,0 +1,1061 @@
+
+
+/* 슬라이드 애니메이션 start  */
+
+.main-news {
+    width: 100%;
+    height: 600px;
+   
+}
+
+.container {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.inner-clear {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* 롤링 이미지 UL */
+.main-news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-news-list li {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 600px;
+}
+
+.main-news-list li img {
+   text-align: center;
+}
+
+.main-news-list li.currentroll {
+    left: 0;
+    transition: left .5s ease-in-out, right .5s ease-in-out;
+}
+
+.main-news-list li.prevroll {
+    left: -600px;
+    transition: left .5s ease-in-out, right .5s ease-in-out;
+}
+
+.main-news-list.reverse li.prevroll {
+    transition: none;
+}
+
+.main-news-list li.nextroll {
+    left: 600px;
+    display: block;
+    transition: none;
+}
+
+.main-news-list.reverse li.nextroll {
+    transition: left 1s ease-in-out, right 1s ease-in-out;
+}
+
+/* 슬라이드 애니메이션 end  */
+
+
+
+
+
+/* 뉴스 사진 정렬 start */
+.main-img1 {
+    margin-top: 20%;
+    
+}
+.main-img2 {
+    margin-top: 20%;
+    
+}
+.main-img3 {
+    margin-top: 10%;
+}
+.main-img4 {
+    margin-top: 20%;
+}
+.main-img5 {
+    margin-top: 20%;
+}
+.main-img6 {
+    margin-top: 20%;
+}
+.main-img7 {
+    margin-top: 20%;
+}
+.main-img8 {
+    margin-top: 10%;
+}
+.main-img9 {
+    margin-top: 10%;
+}
+.main-img10 {
+    
+}
+
+.main-news1{
+    text-align: center;
+    margin: 10px;
+    border: 1px solid gainsboro;
+    width: 400px;
+    height: 400px;
+    
+}
+.main-news2 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+    
+    
+}
+
+.main-news3 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+  
+}
+
+.main-news4 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+   
+}
+
+.main-news5 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+   
+}
+
+.main-news6 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+    
+}
+
+.main-news7 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+    
+}
+
+.main-news8 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+   
+}
+
+.main-news9 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+    
+}
+
+.main-news10 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid gainsboro;
+    margin: 10px;
+    
+}
+/* 뉴스 사진 정렬 END */
+
+
+
+/*애니메이션 1열 start */
+.ani {
+    display: flex;
+}
+/*애니메이션 1열 end */
+
+
+/* 폰트 start */
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+body{
+    font-family: 'TheJamsil5Bold';
+}
+/* 폰트  end */
+
+/* 헤더 start */
+html, body {margin: 0px; padding: 0px;} 
+
+        .entry {
+            width: 100%;
+            height: 800px;
+            background-image: url('../img/summer3.png');
+            margin-bottom: 30px;
+        }
+
+        .menu {
+            display: flex;
+            border-bottom: 5px solid black;
+            align-items: center;
+            padding: 20px 20px;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 40px;
+            color: orange;
+            text-align: left;
+            font-weight: 700;
+            margin-left: 10%;
+        }
+
+        .menu-items {
+            display: flex;
+            margin-left: 20%;
+            
+        }
+
+        .menu-item {
+            font-size: 30px;
+            margin-left: 40px;
+            margin-right: 30px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .pick{
+            display: flex;
+            margin-left: 80px;
+        }
+
+        .menu-item2 {
+        
+            margin-left: 30px;
+            margin-right: 10px;
+       
+        }
+
+
+        .menu-item:hover+.sub-menu {
+            display: flex;
+        }
+
+
+        .sub-menu {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: orange;
+        }
+
+        .menu-item3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .sub-banner {
+            padding-top: 200px;
+            margin-left: 250px;
+        }
+
+        .sub-banner-tit1{
+          font-size: 25px;
+          color: white;
+          font-weight: 700;
+        }
+
+        .sub-banner-tit2{
+          font-size: 35px;
+          color: white;
+          font-weight: 1000;
+        }
+
+        .sub-banner-tit3{
+          font-size: 35px;
+          color: orange;
+          font-weight: 1000;
+        }
+
+/* 헤더 end */
+
+
+/* 검색창 미완성  start */
+        .rel {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+#inputTotalSearch {
+    height: 40px;
+    flex: 1;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+/* 검색창 미완성  end */
+
+/* 검색창 속성  start */
+.btn-clear,
+.btn-search1 {
+    height: 40px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+}
+.btn-clear,
+.btn-search2 {
+    height: 40px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+}
+
+.btn-clear {
+    background-color: #ccc;
+    padding: 0 12px;
+}
+
+.btn-search1 {
+    background-color: #f90;
+    padding: 0 20px;
+    border-radius: 40%;
+}
+.btn-search2 {
+    background-color: #f90;
+    padding: 0 20px;
+}
+/* 검색창 속성 end */
+
+
+/*상단바로이동 바 */
+.beer-recom {
+    position: fixed;
+    right: 50px;
+    top: 328px;
+    width: 80px;
+    text-align: center;
+    z-index: 989;
+    transition: .8s;
+}
+
+
+.beer-recom .tit {
+    padding: 24px 0;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: orange;
+}
+.beer-recom .tit i.ir {
+    display: block;
+    width: 27px;
+    height: 13px;
+    margin: 14px auto 0;
+    background-position: -77px -2px;
+}
+
+.recently-viewed {
+    font-size: 12px;
+    color: #808080;
+}
+.beer-recom ul {
+    padding: 20px 0;
+    background-color: #fff;
+    
+}
+.beer-recom .top {
+    height: 59px;
+    padding-top: 10px;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    background-color: black;
+}
+.beer-recom .top i.ir {
+    width: 19px;
+    height: 12px;
+    background-position: -203px -2px;
+}
+
+.ir {
+    display: inline-block;
+    margin-top: -4px;
+    vertical-align: middle;
+    background-image: url(../img/ir.png);
+    background-repeat: no-repeat;
+}
+
+.beer-recom .top span {
+    display: block;
+    color: #fff;
+    padding-bottom: 7px;
+    font-size: 12px;
+    font-weight: 500;
+}
+       
+
+ ul,p,li {
+    padding: 0;
+    margin: 0;
+  
+    
+}
+
+/*  바로위에 패딩이 뭘하는진 모르지만 넣어야 바가 여백없이 잘 붙어있음*/
+
+li {
+    list-style: none;
+  }
+
+
+
+
+
+
+/* 국산 추천 메뉴  start */
+        .new-tit1 {
+            font-weight: 700;
+            font-size: 30px;
+            margin-left: 60px;
+        }
+
+        .new-tit2 {
+            font-weight: 700;
+            font-size: 30px;
+            color: orange;
+            margin-left: 60px;
+        }
+
+        .new-tit3 {
+            font-weight: 700;
+            font-size: 25px;
+            margin-left: 60px;
+        }
+/* 더보기 속성 start */
+        .new-tit-more1 {
+            text-align: right;
+            margin-right: 30px;
+            font-size: 30px;
+        }
+/* 더보기 속성 end */
+
+
+
+        .new-box-view {
+            width: 100%;
+            display: flex;
+            background-color: rgb(245, 245, 245);
+            margin-bottom: 40px;
+        
+        }
+
+        .new-text {
+            font-weight: 700;
+            margin-top: 10px;
+            color: red;
+            
+            
+        }
+        .new-name {
+            font-weight: 700;
+            color: blue;
+            font-size: 20px;
+           
+           
+        }
+
+        .new-point {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #f90;
+            
+        }
+
+        .new-beer1 {
+            width: 300px;
+            text-align: center;
+        }
+
+        .new-beer2 {
+            width: 300px;
+            text-align: center;
+        }
+
+        .new-beer3 {
+            width: 300px;
+            text-align: center;
+        }
+
+        .new-beer4 {
+            width: 300px;
+            text-align: center;
+        }
+
+        .new-beer5 {
+            width: 300px;
+            text-align: center;
+        }
+
+        .new-beer6 {
+            width: 300px;
+            text-align: center;
+            
+            
+        }
+/* 국산 추천 메뉴 end */
+        
+
+
+
+
+
+
+
+/* 입문자 추천 및 베스트 셀러 맥주 속성 start */  
+        .new-tit-more2 {
+            margin-right: 180px;
+            text-align: right;
+            font-size: 30px;
+        }
+        .best-beer1{
+            text-align: center;
+            
+        }
+        .best-beer2{
+            text-align: center;
+            
+        }
+        .best-beer3{
+            text-align: center;
+          
+        }
+        .best-beer4{
+            text-align: center;
+         
+        }
+        .best-beer5{
+            text-align: center;
+           
+        }
+
+        .recommend-beer1 {
+            text-align: center;
+       
+        }
+
+        .recommend-beer2 {
+            text-align: center;
+   
+        }
+
+        .recommend-beer3 {
+            text-align: center;
+         
+        }
+
+        .recommend-beer4 {
+            text-align: center;
+           
+        }
+
+        .recommend-beer5 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .best-text1 {
+            font-weight: 700;
+            color: red;
+            font-size: 30px;
+        }
+
+        .best-text {
+            font-weight: 700;
+            color: blue;
+            font-size: 20px;
+        }
+
+        .best-name {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: purple;
+
+        }
+
+        .best-point {
+            margin-top: 10px;
+            font-weight: 700;
+
+        }
+
+        .rc-text {
+            font-weight: 700;
+            color: orange;
+            font-size: 20px;
+        }
+
+        .rc-name {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: rgb(224, 194, 24);
+
+        }
+
+        .rc-point {
+            margin-top: 10px;
+            font-weight: 700;
+
+        }
+/* 입문자 추천 및 베스트 셀러 맥주 속성 end */  
+
+/* 입문자 추천 및 베스트 셀러 맥주 슬라이드  start */  
+        .section input[id*="slide"]{
+            display: none;
+        }
+        .section .slidewrap{
+            width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            background-color: #999;
+           
+        }
+        .section .slidelist {
+            white-space: nowrap;
+        }
+        
+        .section ul {
+            padding-inline-start: 0px;
+        
+        }
+        .section .slidelist > li {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            transition: all .5s;
+        }
+        .section .slidelist > li > a {
+            display: block;
+            position: relative;
+        }
+        
+        .section .slidelist >li >a img {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .section .slidelist label {
+            position : absolute;
+            z-index: 10;
+            top : 50%;
+            transform: translateY(-50%);
+            padding: 50px;
+            cursor: pointer;
+        }
+        
+      
+        
+        
+        .section .slidelist .left {
+            
+            left: 30px;
+            background: url('../img/left.png') center center / 100% no-repeat;
+        }
+        
+        .section .slidelist .right {
+           right: 30px;
+            background: url('../img/right.png') center center / 100% no-repeat;
+        }
+        
+        .section .slide-control [class*="control"] {display: none;}
+        
+        .section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+        .section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+        .section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+        .section [id="slide04"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-300%);}
+        .section [id="slide05"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-400%);}
+        .section [id="slide06"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-500%);}
+        .section [id="slide07"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-600%);}
+        .section [id="slide08"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-700%);}
+        .section [id="slide09"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-800%);}
+        .section [id="slide10"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-900%);}
+        
+        
+        
+        .section [id="slide01"]:checked ~ .slidewrap .control01 {display: block; }
+        .section [id="slide02"]:checked ~ .slidewrap .control02 {display: block; }
+        .section [id="slide03"]:checked ~ .slidewrap .control03 {display: block; }
+        .section [id="slide04"]:checked ~ .slidewrap .control04 {display: block; }
+        .section [id="slide05"]:checked ~ .slidewrap .control05 {display: block; }
+        .section [id="slide06"]:checked ~ .slidewrap .control06 {display: block; }
+        .section [id="slide07"]:checked ~ .slidewrap .control07 {display: block; }
+        .section [id="slide08"]:checked ~ .slidewrap .control08 {display: block; }
+        .section [id="slide09"]:checked ~ .slidewrap .control09 {display: block; }
+        .section [id="slide10"]:checked ~ .slidewrap .control10 {display: block; }
+
+
+      
+        .section img.active {
+			opacity: 1;
+		}
+
+		.section img.last-active {
+			opacity: 0;
+		}
+/* 입문자 추천 및 베스트 셀러 맥주 슬라이드  end  */  
+        
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+       
+
+        
+       
+
+        
+/* 뉴스 속성 start */
+        .main-tit {
+            margin-top: 50px;
+            font-size: 35px;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(to right,  #fbb117, #5cffd1); padding: 0.43em 1em;  border-radius: 3px; color: #ffffff;
+
+        }
+
+        .news-see {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 25px;
+            background: linear-gradient(to right,  #fbb117,#5cffd1); padding: 0.43em 1em;  border-radius: 3px; color: #ffffff;
+
+        }
+        
+        .col-3 {
+            text-align: center;
+            margin-right:  5%;
+        }
+
+/* 뉴스 속성 end */
+
+/* izmir.css 에서 뉴스 배너 슬라이드 애니메이션 속성 추가 */
+/* izmir.css 에서 뉴스 배너 슬라이드 애니메이션 속성 추가 */
+/* izmir.css 에서 뉴스 배너 슬라이드 애니메이션 속성 추가 */
+
+
+
+
+/* 뉴스 배너 start */
+        .news-banner {
+            width: 100%;
+            height: 650px;
+            padding: 0 auto;
+            margin-left: 0 auto;
+            background-image: url('../img/wallpaperbetter.jpg');
+            margin-bottom: 20px;
+            
+        }
+        .news-banner-tit1 {
+            color: white;
+            margin-left: 10%;
+            padding-top: 80px;
+            font-weight: 700;
+            font-size: 35px;
+        }
+        .news-banner-tit2 {
+            color: white;
+            margin-left: 10%;
+            font-weight: 700;
+            font-size: 35px;
+        }
+        .news-banner-tit3 {
+            color: white;
+            margin-left:10%;
+            font-size: 20px;
+        }
+        .news-banner-tit4 {
+            color: white;
+            margin-left:10%;
+            font-size: 20px;
+        }
+
+        .news-banner-tit5 {
+            color: white;
+            margin-left: 10%;
+        }
+
+        .news-banner-tit6 {
+            color: green;
+            margin-left: 10%;
+            font-weight: 700;
+            font-size: 40px;
+            
+        }
+
+        .btn-clear,
+        .btn-search3 {
+    height: 40px;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    color: green;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.btn-search3 {
+    background-color: white;
+    padding: 0 20px;
+    border-radius: 40%;
+    border: 2px solid green;
+}
+/* 뉴스 배너 end */
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+/* 푸터 속성 start */
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: #f0f0f0;
+  
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px 200px 20px 300px;
+}
+
+
+
+.main-bottom-links {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+
+.sns-link a{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.sns-link img{
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    text-indent: -9999em;
+}
+
+.sns-namu {
+   
+    margin-right: 10px;
+}
+.sns-wikipedia {
+   
+   margin-right: 10px;
+}
+.sns-beeref {
+   
+   margin-right: 10px;
+}
+.sns-youtube {
+   
+   margin-right: 10px;
+}
+
+
+
+.info-tel {
+    position: relative;
+    float: right;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.tel {
+    font-weight: 700;
+}
+
+
+.footer-link {
+  display: flex;
+  
+ 
+}
+
+
+/* 회사소개 ~ 개인정보처리 방침 start */
+
+.footer-link a {
+    position: relative;
+    float: left;
+}
+
+.link-1 {
+    margin-right: 10px;
+    
+
+}
+.link-2 {
+    margin-right: 10px;
+
+}
+.link-3 {
+    margin-right: 10px;
+
+}
+.link-4 {
+    margin-right: 10px;
+
+}
+.link-5 {
+    margin-right: 10px;
+
+}
+
+/* 회사소개 ~ 개인정보처리 방침 end */
+
+
+/*~주 맥주 copyrigt 까지 타이핑 속성 start */
+.footer-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 20px;
+  
+}
+
+.copyright {
+  width: 100%;
+  
+  font-size: 12px;
+  color: #777;
+ 
+}
+
+
+.rel {
+    position: relative;
+}
+
+aside {
+    display: block;
+}
+
+/*~주 맥주 copyrigt 까지 타이핑 속성 end */
+
+
+/* 맥주 관련 정보문의 및 전화번호 start */
+
+.txt {
+    text-align: right;
+}
+.tel {
+    text-align: center;
+}
+
+/* 맥주 관련 정보문의 및 전화번호  end */
+a {
+    border: 0;
+    color: #262626;
+    text-decoration: none;
+}
+
+
+/* 푸터 속성 end */
+
+
+
+  
+
+
+
+
+
+
+
+

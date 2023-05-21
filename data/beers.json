@@ -1,0 +1,513 @@
+[
+    {
+        "name": "카스",
+        "origin": "한국",
+        "category": "라거",
+        "sweetness": 2.0,
+        "bitterness": 1.5,
+        "sourness": 1.0,
+        "ABV": 4.5,
+        "food_pairing": [
+            "한국식 바비큐",
+            "후라이드 치킨"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/카스.jpg",
+        "rating": 3.5
+    },
+    {
+        "name": "기네스 드래프트",
+        "origin": "아일랜드",
+        "category": "스타우트",
+        "sweetness": 2.0,
+        "bitterness": 3.5,
+        "sourness": 1.2,
+        "ABV": 4.2,
+        "food_pairing": [
+            "스튜",
+            "구운 고기"
+        ],
+        "taste": [
+            "진한",
+            "크리미한",
+            "맥아의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/기네스 드래프트.jpg",
+        "rating": 4.3
+    },
+    {
+        "name": "삿포로 프리미엄 맥주",
+        "origin": "일본",
+        "category": "라거",
+        "sweetness": 2.5,
+        "bitterness": 2.3,
+        "sourness": 1.2,
+        "ABV": 4.9,
+        "food_pairing": [
+            "초밥",
+            "라멘"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/삿포로 프리미엄 맥주.jpg",
+        "rating": 4.1
+    },
+    {
+        "name": "코로나 엑스트라",
+        "origin": "멕시코",
+        "category": "라거",
+        "sweetness": 2.3,
+        "bitterness": 2.0,
+        "sourness": 1.5,
+        "ABV": 4.6,
+        "food_pairing": [
+            "타코",
+            "나쵸"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/코로나 엑스트라.jpg",
+        "rating": 3.9
+    },
+    {
+        "name": "버드와이저",
+        "origin": "미국",
+        "category": "라거",
+        "sweetness": 2.5,
+        "bitterness": 2.0,
+        "sourness": 1.2,
+        "ABV": 5.0,
+        "food_pairing": [
+            "바베큐",
+            "버거"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/버드와이저.jpg",
+        "rating": 3.8
+    },
+    {
+        "name": "필스너 우르켈",
+        "origin": "체코",
+        "category": "필스너",
+        "sweetness": 2.3,
+        "bitterness": 3.2,
+        "sourness": 1.1,
+        "ABV": 4.4,
+        "food_pairing": [
+            "그릴에 구운 소시지",
+            "돈까스"
+        ],
+        "taste": [
+            "균형 잡힌",
+            "부드러운",
+            "홉의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/필스너 우르켈.jpg",
+        "rating": 4.1
+    },
+    {
+        "name": "파울라너 헤페-바이스비어",
+        "origin": "독일",
+        "category": "밀맥주",
+        "sweetness": 3.5,
+        "bitterness": 1.9,
+        "sourness": 2.3,
+        "ABV": 5.5,
+        "food_pairing": [
+            "독일식 프레첼",
+            "소시지"
+        ],
+        "taste": [
+            "과일향",
+            "스파이시한",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/파울라너 헤페-바이스비어.jpg",
+        "rating": 4.3
+    },
+    {
+        "name": "칭따오",
+        "origin": "중국",
+        "category": "라거",
+        "sweetness": 2.5,
+        "bitterness": 2.1,
+        "sourness": 1.1,
+        "ABV": 4.7,
+        "food_pairing": [
+            "딤섬",
+            "중국식 요리"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/칭따오.jpg",
+        "rating": 3.8
+    },
+    {
+        "name": "라이프",
+        "origin": "한국",
+        "category": "라거",
+        "sweetness": 2.0,
+        "bitterness": 1.5,
+        "sourness": 1.0,
+        "ABV": 4.5,
+        "food_pairing": [
+            "삼겹살",
+            "후라이드 치킨"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/라이프.jpg",
+        "rating": 3.6
+    },
+    {
+        "name": "감브리너스",
+        "origin": "독일",
+        "category": "밀맥주",
+        "sweetness": 3.4,
+        "bitterness": 1.8,
+        "sourness": 2.2,
+        "ABV": 5.4,
+        "food_pairing": [
+            "독일 소시지",
+            "바비큐"
+        ],
+        "taste": [
+            "과일향",
+            "스파이시한",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/감브리너스.jpg",
+        "rating": 4.2
+    },
+    {
+        "name": "테라",
+        "origin": "한국",
+        "category": "라거",
+        "sweetness": 2.3,
+        "bitterness": 1.9,
+        "sourness": 1.2,
+        "ABV": 4.5,
+        "food_pairing": [
+            "양념치킨",
+            "삼겹살"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/테라.jpg",
+        "rating": 3.7
+    },
+    {
+        "name": "레페 블론드",
+        "origin": "벨기에",
+        "category": "에일",
+        "sweetness": 3.7,
+        "bitterness": 3.0,
+        "sourness": 2.0,
+        "ABV": 6.6,
+        "food_pairing": [
+            "샐러드",
+            "치즈 플래터"
+        ],
+        "taste": [
+            "과일향",
+            "풍부한",
+            "탄산감"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/레페 블론드.jpg",
+        "rating": 4.5
+    },
+    {
+        "name": "데낄라",
+        "origin": "벨기에",
+        "category": "에일",
+        "sweetness": 3.8,
+        "bitterness": 3.5,
+        "sourness": 1.9,
+        "ABV": 8.5,
+        "food_pairing": [
+            "빵과 치즈",
+            "해산물"
+        ],
+        "taste": [
+            "과일향",
+            "풍부한",
+            "스파이시한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/데낄라.jpg",
+        "rating": 4.6
+    },
+    {
+        "name": "클라우스탈러",
+        "origin": "독일",
+        "category": "무알콜 맥주",
+        "sweetness": 3.0,
+        "bitterness": 2.2,
+        "sourness": 1.8,
+        "ABV": 0.5,
+        "food_pairing": [
+            "그릴에 구운 소시지",
+            "바비큐"
+        ],
+        "taste": [
+            "깔끔한",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/클라우스탈러.jpg",
+        "rating": 3.9
+    },
+    {
+        "name": "오비 골든라거",
+        "origin": "한국",
+        "category": "라거",
+        "sweetness": 2.4,
+        "bitterness": 1.9,
+        "sourness": 1.2,
+        "ABV": 4.8,
+        "food_pairing": [
+            "피자",
+            "버거"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/오비 골든라거.jpg",
+        "rating": 3.6
+    },
+    {
+        "name": "칼스버그",
+        "origin": "덴마크",
+        "category": "라거",
+        "sweetness": 2.5,
+        "bitterness": 2.3,
+        "sourness": 1.1,
+        "ABV": 5.0,
+        "food_pairing": [
+            "스테이크",
+            "피시앤칩스"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "맥아의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/칼스버그.jpg",
+        "rating": 3.8
+    },
+    {
+        "name": "스텔라 아르투아",
+        "origin": "벨기에",
+        "category": "라거",
+        "sweetness": 2.6,
+        "bitterness": 2.4,
+        "sourness": 1.3,
+        "ABV": 5.0,
+        "food_pairing": [
+            "빵과 치즈",
+            "해산물"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "맥아의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/스텔라 아르투아.jpg",
+        "rating": 4.1
+    },
+    {
+        "name": "카스 라이트",
+        "origin": "한국",
+        "category": "라거",
+        "sweetness": 2.2,
+        "bitterness": 1.7,
+        "sourness": 1.1,
+        "ABV": 4.2,
+        "food_pairing": [
+            "양념치킨",
+            "삼겹살"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/카스 라이트.jpg",
+        "rating": 3.5
+    },
+    {
+        "name": "구스 아일랜드 IPA",
+        "origin": "미국",
+        "category": "IPA",
+        "sweetness": 3.0,
+        "bitterness": 4.0,
+        "sourness": 1.5,
+        "ABV": 5.9,
+        "food_pairing": [
+            "버거",
+            "스테이크"
+        ],
+        "taste": [
+            "과일향",
+            "풍부한",
+            "홉의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/구스 아일랜드 IPA.jpg",
+        "rating": 4.3
+    },
+    {
+        "name": "하이네켄",
+        "origin": "네덜란드",
+        "category": "라거",
+        "sweetness": 2.5,
+        "bitterness": 2.2,
+        "sourness": 1.2,
+        "ABV": 5.0,
+        "food_pairing": [
+            "피자",
+            "버거"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "맥아의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/하이네켄.jpg",
+        "rating": 4.1
+    },
+    {
+        "name": "맥스",
+        "origin": "한국",
+        "category": "라거",
+        "sweetness": 2.3,
+        "bitterness": 1.8,
+        "sourness": 1.1,
+        "ABV": 4.5,
+        "food_pairing": [
+            "후라이드 치킨",
+            "삼겹살"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/맥스.jpg",
+        "rating": 3.6
+    },
+    {
+        "name": "호가든",
+        "origin": "벨기에",
+        "category": "밀맥주",
+        "sweetness": 3.6,
+        "bitterness": 2.1,
+        "sourness": 2.3,
+        "ABV": 4.9,
+        "food_pairing": [
+            "샐러드",
+            "치즈 플래터"
+        ],
+        "taste": [
+            "과일향",
+            "스파이시한",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/호가든.jpg",
+        "rating": 4.4
+    },
+    {
+        "name": "크롬바커 피스너",
+        "origin": "독일",
+        "category": "피스너",
+        "sweetness": 2.8,
+        "bitterness": 3.2,
+        "sourness": 1.5,
+        "ABV": 5.0,
+        "food_pairing": [
+            "독일 소시지",
+            "바비큐"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "맥아의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/크롬바커 피스너.jpg",
+        "rating": 4.2
+    },
+    {
+        "name": "블랑",
+        "origin": "벨기에",
+        "category": "밀맥주",
+        "sweetness": 3.8,
+        "bitterness": 2.1,
+        "sourness": 2.2,
+        "ABV": 4.5,
+        "food_pairing": [
+            "샐러드",
+            "치즈 플래터"
+        ],
+        "taste": [
+            "과일향",
+            "스파이시한",
+            "상쾌한"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/블랑.jpg",
+        "rating": 4.4
+    },
+    {
+        "name": "아사히 슈퍼 드라이",
+        "origin": "일본",
+        "category": "라거",
+        "sweetness": 2.3,
+        "bitterness": 2.0,
+        "sourness": 1.2,
+        "ABV": 5.0,
+        "food_pairing": [
+            "초밥",
+            "라멘"
+        ],
+        "taste": [
+            "깔끔한",
+            "가벼운",
+            "맥아의 풍미"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/아사히 슈퍼 드라이.jpg",
+        "rating": 4.1
+    },
+    {
+        "name": "브루독 펑크 IPA",
+        "origin": "영국",
+        "category": "IPA",
+        "sweetness": 3.7,
+        "bitterness": 4.0,
+        "sourness": 2.3,
+        "ABV": 5.6,
+        "food_pairing": [
+            "스테이크",
+            "치즈"
+        ],
+        "taste": [
+            "홉의 향",
+            "진한",
+            "깊은"
+        ],
+        "image_path": "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/브루독 펑크 IPA.jpg",
+        "rating": 4.5
+    }
+]

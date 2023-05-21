@@ -41,8 +41,3 @@ uvicorn main:app --host=0.0.0.0 --port=8000
 - [클라우드타입 FAQ](https://help.cloudtype.io/guide/faq)
 
 - [Discord](https://discord.gg/U7HX4BA6hu)
-
-
-## 📄 License
-
-[MIT](https://github.com/tiangolo/fastapi/blob/master/LICENSE)

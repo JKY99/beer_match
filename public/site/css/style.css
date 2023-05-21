@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+/* 공통 */
+div, ul, ol, p, dl, dt, dd{padding:0; margin:0; border:0;}
+ul, ol{list-style:none;}
+
+
+/* customer */
+.check_board_tb{border-collapse:collapse; width:100%;}
+.check_board_tb input{border:1px solid #000; background:#fff; /*-webkit-appearance:none;*/ /*-webkit-appearance:checkbox;*/ /*border-radius:0;*/}
+.check_board_tb thead tr th{border:1px solid #999; background:#e1a109; color:#fff;}
+.check_board_tb tbody tr td{border:1px solid #999; text-align:center;}
