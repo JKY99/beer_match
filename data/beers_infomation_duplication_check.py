@@ -16,10 +16,10 @@ with open('C:\\Users\\jkypc\\OneDrive\\문서\\1.대학(3-1)\\전공_캡스톤�
         # 이름이 딕셔너리에 없으면, 새로운 이름으로 간주하고 출현 횟수를 1로 설정합니다.
         else:
             name_count[name] = 1
-            
-    #     beer['image_path'] = "https://port-0-fastapi-0519-pi0mb2blhomfq05.sel4.cloudtype.app/data/img/"+name+".jpg"
-    # with open('C:\\Users\\jkypc\\OneDrive\\문서\\1.대학(3-1)\\전공_캡스톤디자인1\\fastapi_0519\data\\beers.json','w',encoding="UTF-8") as file:
-    #     json.dump(data, file, ensure_ascii=False, indent=4)
+        api_path = "port-0-beer-match-lhe2blhxowpm3.sel4.cloudtype.app"
+        beer['image_path'] = api_path+"/data/img/"+name+".jpg"
+    with open('C:\\Users\\jkypc\\OneDrive\\문서\\1.대학(3-1)\\전공_캡스톤디자인1\\fastapi_0519\data\\beers.json','w',encoding="UTF-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
 
 # 이름의 출현 횟수를 검사하여 중복된 이름을 찾습니다.
 check = True

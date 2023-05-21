@@ -23,6 +23,15 @@ async def insert_beer(beer):
     await db["beers"].insert_one(beer.dict())
 
 
+# # api경로 변경시 맥주 이미지 경로 변경 코드
+# async def update():
+#     api_uri = os.environ.get("API_URI")
+#     beers = db.Beers
+#     # 각 맥주의 'image_path'를 업데이트합니다.
+#     async for doc in beers.find():
+#         new_image_path = api_uri+"/data/img/" + doc['name'] + ".jpg"
+#         await beers.update_one({'_id': doc['_id']}, {'$set': {'image_path': new_image_path}})
+# asyncio.run(update())
 
 #######################################
 # import json,sys,io
@@ -50,11 +59,6 @@ async def insert_beer(beer):
 #     for user in data:
 #         collection.insert_one(user)
 #######################################
-
-# async def find_all_beers():
-#     beers = db.beers
-#     beer_list = await list(beers.find())
-#     return beer_list
 
 async def find_all_beers():
     beers = db.Beers
