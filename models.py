@@ -1,16 +1,7 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, Dict
 from pydantic import BaseModel, Field, EmailStr
 
-# 맥주 정보를 담는 BaseModel입니다.
-# class Beer(BaseModel):
-#     beer_name: str          # 맥주 이름
-#     origin: str             # 맥주 원산지 (국산 또는 수입)
-#     category: str           # 맥주 대분류 (예: 에일, 라거)
-#     ABV: float = Field(..., ge=0, le=100)  # 맥주 알코올 도수, 0~100% 범위
-#     taste: str              # 맥주 맛과 향에 대한 설명
-#     food_pairing: str       # 맥주와 잘 어울리는 안주
-#     image_path: str         # 맥주 이미지 파일 경로 또는 URL
 class Beer(BaseModel):
     name: str
     origin: str             # 원산지 (국산 또는 수입)
@@ -40,16 +31,23 @@ class UserSearchHistory(BaseModel):
 
 # 사용자의 선호도 정보를 담는 BaseModel입니다.
 class UserPreferences(BaseModel):
-    user_id: str            # 사용자 ID (Users 테이블과 관련됨)
-    preferred_origin: Optional[List[str]] = []  # 선호하는 맥주의 원산지 리스트
-    preferred_category: Optional[List[str]] = []  # 선호하는 맥주의 카테고리 리스트
-    preferred_subcategory: Optional[List[str]] = []  # 선호하는 맥주의 부카테고리 리스트
-    preferred_ABV: Optional[List[float]] = []  # 선호하는 맥주의 알코올 도수 범위 (예: [4.0, 6.0] - 4~6% 선호)
-    preferred_tastes: Optional[List[str]] = []  # 선호하는 맥주의 맛 특성 리스트 (예: ["달콤한", "과일향"])
-    preferred_food_pairings: Optional[List[str]] = []  # 선호하는 맥주와의 안주 조합 리스트
+    user_id: str                     # 사용자 ID
+    preferred_origin: str            # 선호하는 원산지
+    preferred_categories: List[str]  # 선호하는 맥주 대분류
+    preferred_sweetness: float       # 선호하는 당도
+    preferred_bitterness: float      # 선호하는 쓴맛
+    preferred_sourness: float        # 선호하는 산미
+    preferred_ABV: float             # 선호하는 알코올 도수
+    preferred_food_pairing: List[str] # 선호하는 음식 매칭
+    preferred_taste: List[str]       # 선호하는 맛과 향
 
-# 사용자의 찜한 정보를 담는 BaseModel입니다.
+# 사용자의 찜을 담는 BaseModel입니다.
+class FavoriteItem(BaseModel):
+    name: str
+    timestamp: datetime
+
+# 사용자의 찜한 정보들을 담는 BaseModel입니다.
 class UserFavorites(BaseModel):
     user_id: str
-    favoriteBeerIDs: Optional[List[str]] = []  # 사용자가 찜한 맥주의 ID 리스트
-    favoriteNewsIDs: Optional[List[str]] = []  # 사용자가 찜한 뉴스의 ID 리스트
+    favoriteBeerIDs: Optional[List[FavoriteItem]] = Field(default=[])  # 사용자가 찜한 맥주의 ID와 찜한 시간
+    favoriteNewsIDs: Optional[List[FavoriteItem]] = Field(default=[])  # 사용자가 찜한 뉴스의 ID와 찜한 시간
