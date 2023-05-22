@@ -1,15 +1,13 @@
 # import asyncio
 from fastapi import FastAPI, Query, Path
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import JSONResponse, FileResponse
-from pydantic import BaseModel, Field, EmailStr
-from typing import List, Optional
-from datetime import datetime
+from fastapi.responses import FileResponse
+from typing import List
 from models import Beer, UserFavorites
 from database import find_all_beers, find_beer, find_user_favorites
 
 app = FastAPI()
-app.mount("/", StaticFiles(directory="public", html = True), name="static")\
+app.mount("/", StaticFiles(directory="public", html = True), name="static")
 
 @app.get("/hello")
 def hello():
