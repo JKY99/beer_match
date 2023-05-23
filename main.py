@@ -7,7 +7,11 @@ from models import Beer, UserFavorites
 from database import find_all_beers, find_beer, find_user_favorites
 
 app = FastAPI()
-app.mount("/", StaticFiles(directory="public", html = True), name="static")
+# app.mount("/", StaticFiles(directory="public", html = True), name="static")
+
+@app.get("/")
+def index():
+    return FileResponse('public/index.html')
 
 @app.get("/hello")
 def hello():
