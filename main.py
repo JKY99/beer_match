@@ -13,6 +13,10 @@ app = FastAPI()
 def index():
     return FileResponse('public/index.html')
 
+@app.get("/home")
+def index():
+    return FileResponse('public/site/맥주홈.html')
+
 @app.get("/hello")
 def hello():
     return {"Hello": "World"}
