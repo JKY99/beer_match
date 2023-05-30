@@ -26,7 +26,7 @@ class UserService:
     @classmethod
     async def update(cls, user_id: str, user: User) -> User:
         await cls.collection.replace_one({"user_id": user_id}, user.dict())
-        return await cls.read(user_id)
+        return await cls.read(user.user_id)
 
     @classmethod
     async def delete(cls, user_id: str) -> None:
