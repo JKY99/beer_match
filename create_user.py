@@ -2,7 +2,7 @@ import random
 import string
 import json
 from typing import Dict, List
-from models import User
+from database.models import User
 
 # 이메일 생성을 위한 도메인 리스트
 domains = ["gmail.com", "naver.com", "daum.net", "yahoo.com", "korea.com"]

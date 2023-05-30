@@ -1,6 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
+from database.beer import *
 import os
 import asyncio
 
@@ -22,44 +23,6 @@ async def fetch_beers():
 
 async def insert_beer(beer):
     await db["beers"].insert_one(beer.dict())
-
-
-# # api경로 변경시 맥주 이미지 경로 변경 코드
-# async def update():
-#     api_uri = os.environ.get("API_URI")
-#     beers = db.Beers
-#     # 각 맥주의 'image_path'를 업데이트합니다.
-#     async for doc in beers.find():
-#         new_image_path = api_uri+"/data/img/" + doc['name'] + ".jpg"
-#         await beers.update_one({'_id': doc['_id']}, {'$set': {'image_path': new_image_path}})
-# asyncio.run(update())
-
-#######################################
-# import json,sys,io
-# sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
-# sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
-#######################################
-# # Beers 컬렉션 선택
-# collection = db.Beers
-
-# # JSON 파일을 읽습니다.
-# with open('C:\\Users\\jkypc\\OneDrive\\문서\\1.대학(3-1)\\전공_캡스톤디자인1\\fastapi_0519\data\\beers.json',encoding="UTF-8") as f:
-#     data = json.load(f)
-
-#     # JSON 데이터를 읽어와서 각 맥주를 MongoDB 컬렉션에 개별 문서로 넣습니다.
-#     for beer in data:
-#         collection.insert_one(beer)
-#######################################
-# # Users 컬렉션 선택
-# collection = db.Users
-# # JSON 파일을 읽습니다.
-# with open('C:\\Users\\jkypc\\OneDrive\\문서\\1.대학(3-1)\\전공_캡스톤디자인1\\fastapi_0519\data\\users.json',encoding="UTF-8") as f:
-#     data = json.load(f)
-
-#     # JSON 데이터를 읽어와서 각 맥주를 MongoDB 컬렉션에 개별 문서로 넣습니다.
-#     for user in data:
-#         collection.insert_one(user)
-#######################################
 
 async def find_all_beers():
     beers = db.Beers

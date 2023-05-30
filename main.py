@@ -1,37 +1,53 @@
 # import asyncio
-from fastapi import FastAPI, Query, Path
-from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI, HTTPException, Query, Path
 from fastapi.responses import FileResponse
 from typing import List
-from models import Beer, UserFavorites
-from database import find_all_beers, find_beer, find_user_favorites
+from database.models import Beer, UserFavorites
+from database.database import *
 
 app = FastAPI()
-# app.mount("/", StaticFiles(directory="public", html = True), name="static")
-
-@app.get("/")
-def index():
-    return FileResponse('public/index.html')
-
-@app.get("/home")
-def index():
-    return FileResponse('public/site/맥주홈.html')
 
 @app.get("/hello")
 def hello():
     return {"Hello": "World"}
 
-# 모든 맥주 정보를 조회합니다.  ex) /beers/all
-@app.get("/beers/all", response_model=List[Beer])
+#--------------------------------------Beer------------------------------------------
+# 모든 맥주 목록을 반환하는 API 엔드포인트
+@app.get("/beers", response_model=List[Beer])
 async def get_all_beers():
-    result = await find_all_beers()
-    return result
+    return await BeerService.read_all()
 
-# 맥주 정보를 조회합니다.   ex) /beers?beer_name=cass
-@app.get("/beers/", response_model=Beer)
-async def get_beer_by_name(beer_name: str = Query(...)):
-    result = await find_beer(beer_name)
-    return result
+# 특정 ID의 맥주 정보를 반환하는 API 엔드포인트
+@app.get("/beers/{beer_id}", response_model=Beer)
+async def get_beer(beer_id: str):
+    beer = await BeerService.read(beer_id)
+    if beer is None:
+        raise HTTPException(status_code=404, detail="Beer not found")
+    return beer
+
+# 새로운 맥주를 추가하는 API 엔드포인트
+@app.post("/beers", response_model=Beer)
+async def create_beer(beer: Beer):
+    return await BeerService.create(beer)
+
+# 특정 ID의 맥주 정보를 수정하는 API 엔드포인트
+@app.put("/beers/{beer_id}", response_model=Beer)
+async def update_beer(beer_id: str, beer: Beer):
+    updated_beer = await BeerService.update(beer_id, beer)
+    if updated_beer is None:
+        raise HTTPException(status_code=404, detail="Beer not found")
+    return updated_beer
+
+# 특정 ID의 맥주 정보를 삭제하는 API 엔드포인트
+@app.delete("/beers/{beer_id}")
+async def delete_beer(beer_id: str):
+    beer = await BeerService.read(beer_id)
+    if beer is None:
+        raise HTTPException(status_code=404, detail="Beer not found")
+    await BeerService.delete(beer_id)
+    return {"message": "Beer has been deleted successfully"}
+#--------------------------------------Beer------------------------------------------
+
 
 # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1
 @app.get("/userfavorites/", response_model=UserFavorites)
