@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 # 사용자에 대한 CRUD 연산을 수행하는 UserService 클래스입니다.
 class UserService:
     # MongoDB의 users 컬렉션을 참조합니다.
-    collection = db['users']
+    collection = db['Users']
 
     # 새로운 사용자를 생성하고 반환하는 메서드입니다.
     @classmethod
