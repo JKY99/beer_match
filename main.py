@@ -1,8 +1,6 @@
-# import asyncio
-from fastapi import FastAPI, HTTPException, Query, Path
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, HTTPException
 from typing import List
-from database.models import Beer, UserFavorites
+from database.models import *
 from database.database import *
 
 app = FastAPI()
@@ -57,11 +55,6 @@ async def delete_beer(beer_id: str):
 #--------------------------------------Beer------------------------------------------
 
 #--------------------------------------User------------------------------------------
-
-app = FastAPI()
-
-# 사용자 API
-
 # 새 사용자를 생성하는 API
 @app.post("/users", response_model=User)
 async def create_user(user: User):
@@ -97,28 +90,22 @@ async def delete_user(user_id: str):
     await UserService.delete(user_id)
     return {"message": "User has been deleted successfully"}
 
-#--------------------------------------Beer------------------------------------------
+#--------------------------------------User------------------------------------------
 
 
+# # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1
+# @app.get("/userfavorites/", response_model=UserFavorites)
+# async def get_user_favorites(user_id: str = Query(...)):
+#     result = await find_user_favorites(user_id)
+#     return result
 
+# # 찜한 맥주를 추가합니다.   ex) /userfavorites?user_id=user1&beer_id=beer123
+# @app.post("/userfavorites/", response_model=UserFavorites)
+# async def add_favorite_beer(user_id: str = Query(...), beer_id: str = Query(...)):
+#     result = await add_favorite_beer(user_id, beer_id)
+#     return result
 
-
-
-
-
-# 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1
-@app.get("/userfavorites/", response_model=UserFavorites)
-async def get_user_favorites(user_id: str = Query(...)):
-    result = await find_user_favorites(user_id)
-    return result
-
-# 찜한 맥주를 추가합니다.   ex) /userfavorites?user_id=user1&beer_id=beer123
-@app.post("/userfavorites/", response_model=UserFavorites)
-async def add_favorite_beer(user_id: str = Query(...), beer_id: str = Query(...)):
-    result = await add_favorite_beer(user_id, beer_id)
-    return result
-
-# 이미지 파일 반환하기 ex) /data/img/카스.jpg
-@app.get("/data/img/{filename}")
-async def get_image(filename: str = Path(...)):
-    return FileResponse(path=f"data/img/{filename}", media_type="image/jpeg")
+# # 이미지 파일 반환하기 ex) /data/img/카스.jpg
+# @app.get("/data/img/{filename}")
+# async def get_image(filename: str = Path(...)):
+#     return FileResponse(path=f"data/img/{filename}", media_type="image/jpeg")
