@@ -16,7 +16,7 @@ async def get_all_beers():
     return await BeerService.read_all()
 
 # 특정 ID의 맥주 정보를 반환하는 API 엔드포인트
-@app.get("/beers/{beer_id}", response_model=Beer)
+@app.get("/beers/id/{beer_id}", response_model=Beer)
 async def get_beer(beer_id: str):
     beer = await BeerService.read(beer_id)
     if beer is None:
@@ -24,7 +24,7 @@ async def get_beer(beer_id: str):
     return beer
 
 # 맥주 이름으로 맥주를 찾는 API
-@app.get("/beers/{beer_name}", response_model=Beer)
+@app.get("/beers/name/{beer_name}", response_model=Beer)
 async def read_beer_by_name(beer_name: str):
     beer = await BeerService.read_by_name(beer_name)
     if beer is None:
