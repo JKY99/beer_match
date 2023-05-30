@@ -33,4 +33,3 @@ async def rearrange_fields(collection):
         await collection.replace_one({'_id': beer['_id']}, new_beer)
 
 # asyncio.run(rearrange_fields(collection))
-

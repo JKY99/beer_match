@@ -9,7 +9,7 @@ class BeerService:
     @classmethod
     async def create(cls, beer: Beer) -> Beer:
         beer_dict = beer.dict()
-        beer_dict["_id"] = ObjectId()
+        # beer_dict["_id"] = ObjectId()
         await cls.collection.insert_one(beer_dict)
         return beer
 

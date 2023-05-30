@@ -10,7 +10,6 @@ class UserService:
     @classmethod
     async def create(cls, user: User) -> User:
         user_dict = user.dict()
-        user_dict["_id"] = ObjectId()
         await cls.collection.insert_one(user_dict)
         return user
 
