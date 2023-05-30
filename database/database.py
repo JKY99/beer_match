@@ -1,38 +1,7 @@
-from motor.motor_asyncio import AsyncIOMotorClient
-from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
 from database.beer import *
-import os
-import asyncio
-
-load_dotenv(find_dotenv())
-
-password = os.environ.get("MONGODB_PWD")
-
-uri = f"mongodb+srv://admin:{password}@recommend.wg2l4em.mongodb.net/?retryWrites=true&w=majority"
-
-client = AsyncIOMotorClient(uri)
-
-
-# 데이터베이스를 선택합니다.
-db = client.BeerRecommendationsDB
-
-async def fetch_beers():
-    beers = await db["beers"].find().to_list(1000)
-    return beers
-
-async def insert_beer(beer):
-    await db["beers"].insert_one(beer.dict())
-
-async def find_all_beers():
-    beers = db.Beers
-    beer_list = await beers.find().to_list(length=1000)
-    return beer_list
-
-async def find_beer(beer_name):
-    beers = db.Beers
-    beer = await beers.find_one({'name': beer_name})
-    return beer
+from database.user import *
+from database.connection import *
 
 async def find_user_favorites(user_id: str) -> dict:
     user_favorites = db.UserFavorites

@@ -1,13 +1,11 @@
 from typing import List
-from datetime import datetime
-from motor.motor_asyncio import AsyncIOMotorClient
-from models import Beer
+from database.models import Beer
 from bson.objectid import ObjectId
-from database import db
+from database.connection import db
 
 class BeerService:
-    # MongoDB에 있는 'beers'라는 이름의 컬렉션을 참조하도록 설정합니다.
-    collection = db['beers']
+    # MongoDB에 있는 'Beers'라는 이름의 컬렉션을 참조하도록 설정합니다.
+    collection = db['Beers']
 
     @classmethod
     async def create(cls, beer: Beer) -> Beer:
@@ -31,6 +29,12 @@ class BeerService:
         beer = await cls.collection.find_one({"_id": ObjectId(beer_id)})
 
         # 찾은 Beer를 Beer 객체로 변환하여 반환하거나, 찾지 못한 경우 None을 반환합니다.
+        return Beer(**beer) if beer else None
+    
+    # BeerService in beer.py
+    @classmethod
+    async def read_by_name(cls, beer_name: str) -> Beer:
+        beer = await cls.collection.find_one({"name": beer_name})
         return Beer(**beer) if beer else None
 
     @classmethod

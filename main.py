@@ -25,6 +25,14 @@ async def get_beer(beer_id: str):
         raise HTTPException(status_code=404, detail="Beer not found")
     return beer
 
+# 맥주 이름으로 맥주를 찾는 API
+@app.get("/beers/{beer_name}", response_model=Beer)
+async def read_beer_by_name(beer_name: str):
+    beer = await BeerService.read_by_name(beer_name)
+    if beer is None:
+        raise HTTPException(status_code=404, detail="Beer not found")
+    return beer
+
 # 새로운 맥주를 추가하는 API 엔드포인트
 @app.post("/beers", response_model=Beer)
 async def create_beer(beer: Beer):
@@ -47,6 +55,55 @@ async def delete_beer(beer_id: str):
     await BeerService.delete(beer_id)
     return {"message": "Beer has been deleted successfully"}
 #--------------------------------------Beer------------------------------------------
+
+#--------------------------------------User------------------------------------------
+
+app = FastAPI()
+
+# 사용자 API
+
+# 새 사용자를 생성하는 API
+@app.post("/users", response_model=User)
+async def create_user(user: User):
+    return await UserService.create(user)
+
+# 특정 ID를 가진 사용자를 가져오는 API
+@app.get("/users/{user_id}", response_model=User)
+async def read_user(user_id: str):
+    user = await UserService.read(user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return user
+
+# 모든 사용자를 가져오는 API
+@app.get("/users", response_model=List[User])
+async def read_users():
+    return await UserService.read_all()
+
+# 특정 ID를 가진 사용자의 정보를 업데이트하는 API
+@app.put("/users/{user_id}", response_model=User)
+async def update_user(user_id: str, user: User):
+    updated_user = await UserService.update(user_id, user)
+    if updated_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return updated_user
+
+# 특정 ID를 가진 사용자를 삭제하는 API
+@app.delete("/users/{user_id}")
+async def delete_user(user_id: str):
+    user = await UserService.read(user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    await UserService.delete(user_id)
+    return {"message": "User has been deleted successfully"}
+
+#--------------------------------------Beer------------------------------------------
+
+
+
+
+
+
 
 
 # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1
