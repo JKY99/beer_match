@@ -3,7 +3,8 @@ from typing import List, Optional, Dict
 from pydantic import BaseModel, Field, EmailStr
 
 class Beer(BaseModel):
-    name: str
+    beer_id : str           # 맥주 ID
+    name: str               # 맥주 이름
     origin: str             # 원산지 (국산 또는 수입)
     category: str           # 맥주 대분류 (예: 에일, 라거)
     sweetness: float        # 당도
