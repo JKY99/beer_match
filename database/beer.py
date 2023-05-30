@@ -26,7 +26,7 @@ class BeerService:
     async def read(cls, beer_id: str) -> Beer:
         # 주어진 ID를 가진 Beer를 'beers' 컬렉션에서 찾습니다.
         # 여기서 ID는 ObjectId 형태이므로 str 형태의 beer_id를 ObjectId로 변환합니다.
-        beer = await cls.collection.find_one({"_id": ObjectId(beer_id)})
+        beer = await cls.collection.find_one({"beer_id": ObjectId(beer_id)})
 
         # 찾은 Beer를 Beer 객체로 변환하여 반환하거나, 찾지 못한 경우 None을 반환합니다.
         return Beer(**beer) if beer else None
@@ -50,7 +50,7 @@ class BeerService:
     async def update(cls, beer_id: str, beer: Beer) -> Beer:
         # 주어진 ID를 가진 Beer를 새로운 Beer로 업데이트합니다.
         # 이때 ID는 ObjectId 형태이므로 str 형태의 beer_id를 ObjectId로 변환합니다.
-        await cls.collection.replace_one({"_id": ObjectId(beer_id)}, beer.dict())
+        await cls.collection.replace_one({"beer_id": ObjectId(beer_id)}, beer.dict())
 
         # 업데이트된 Beer를 반환합니다.
         return await cls.read(beer_id)
@@ -58,4 +58,4 @@ class BeerService:
     @classmethod
     async def delete(cls, beer_id: str) -> None:
         # 주어진 ID를 가진 Beer를 'beers' 컬렉션에서 삭제합니다.
-        await cls.collection.delete_one({"_id": ObjectId(beer_id)})
+        await cls.collection.delete_one({"beer_id": ObjectId(beer_id)})

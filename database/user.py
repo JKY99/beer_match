@@ -20,7 +20,7 @@ class UserService:
     @classmethod
     async def read(cls, user_id: str) -> User:
         # users 컬렉션에서 _id 필드가 user_id와 일치하는 문서를 찾습니다.
-        user = await cls.collection.find_one({"_id": ObjectId(user_id)})
+        user = await cls.collection.find_one({"user_id": ObjectId(user_id)})
         # 찾은 문서가 있으면 User 모델로 변환하고 반환하고, 없으면 None을 반환합니다.
         return User(**user) if user else None
 
@@ -36,7 +36,7 @@ class UserService:
     @classmethod
     async def update(cls, user_id: str, user: User) -> User:
         # users 컬렉션에서 _id 필드가 user_id와 일치하는 문서를 user의 정보로 교체합니다.
-        await cls.collection.replace_one({"_id": ObjectId(user_id)}, user.dict())
+        await cls.collection.replace_one({"user_id": ObjectId(user_id)}, user.dict())
         # 업데이트된 사용자를 찾아서 반환합니다.
         return await cls.read(user_id)
 
@@ -44,4 +44,4 @@ class UserService:
     @classmethod
     async def delete(cls, user_id: str) -> None:
         # users 컬렉션에서 _id 필드가 user_id와 일치하는 문서를 삭제합니다.
-        await cls.collection.delete_one({"_id": ObjectId(user_id)})
+        await cls.collection.delete_one({"user_id": ObjectId(user_id)})
