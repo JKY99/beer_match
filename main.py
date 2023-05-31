@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 from database.models import *
 from database.database import *
@@ -8,6 +9,14 @@ app = FastAPI()
 @app.get("/hello")
 def hello():
     return {"Hello": "World"}
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #--------------------------------------Beer------------------------------------------
 # 모든 맥주 목록을 반환하는 API 엔드포인트

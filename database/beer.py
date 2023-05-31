@@ -9,7 +9,6 @@ class BeerService:
     @classmethod
     async def create(cls, beer: Beer) -> Beer:
         beer_dict = beer.dict()
-        # beer_dict["_id"] = ObjectId()
         await cls.collection.insert_one(beer_dict)
         return beer
 
@@ -31,7 +30,7 @@ class BeerService:
     @classmethod
     async def update(cls, beer_id: str, beer: Beer) -> Beer:
         await cls.collection.replace_one({"beer_id": beer_id}, beer.dict())
-        return await cls.read(beer_id)
+        return await cls.read(beer.beer_id)
 
     @classmethod
     async def delete(cls, beer_id: str) -> None:
