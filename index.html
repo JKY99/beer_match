@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <table id="usersTable">
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <!-- Data will be populated here -->
+    </table>
+
+    <script>
+        const url = 'https://port-0-beer-match-lhe2blhxowpm3.sel4.cloudtype.app/beers'; // Your API endpoint here
+
+        fetch(url)
+        .then(response => response.json())
+        .then(users => {
+            const table = document.getElementById('usersTable');
+            users.forEach(user => {
+                const row = table.insertRow(-1);
+                row.insertCell(0).innerText = user.user_id;
+                row.insertCell(1).innerText = user.email;
+                row.insertCell(2).innerText = user.age;
+                row.insertCell(3).innerText = user.gender;
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
