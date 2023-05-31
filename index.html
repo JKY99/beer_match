@@ -4,12 +4,20 @@
     <title>Fetch API Example</title>
 </head>
 <body>
-    <table id="usersTable">
+    <table id="beerTable">
         <tr>
-            <th>User ID</th>
-            <th>Email</th>
-            <th>Age</th>
-            <th>Gender</th>
+            <th>Beer ID</th>
+            <th>Name</th>
+            <th>Origin</th>
+            <th>Category</th>
+            <th>Sweetness</th>
+            <th>Bitterness</th>
+            <th>Sourness</th>
+            <th>ABV</th>
+            <th>Food Pairing</th>
+            <th>Taste</th>
+            <th>Image</th>
+            <th>Rating</th>
         </tr>
         <!-- Data will be populated here -->
     </table>
@@ -19,14 +27,22 @@
 
         fetch(url)
         .then(response => response.json())
-        .then(users => {
-            const table = document.getElementById('usersTable');
-            users.forEach(user => {
+        .then(beers => {
+            const table = document.getElementById('beerTable');
+            beers.forEach(beer => {
                 const row = table.insertRow(-1);
-                row.insertCell(0).innerText = user.user_id;
-                row.insertCell(1).innerText = user.email;
-                row.insertCell(2).innerText = user.age;
-                row.insertCell(3).innerText = user.gender;
+                row.insertCell(0).innerText = beer.beer_id;
+                row.insertCell(1).innerText = beer.name;
+                row.insertCell(2).innerText = beer.origin;
+                row.insertCell(3).innerText = beer.category;
+                row.insertCell(4).innerText = beer.sweetness;
+                row.insertCell(5).innerText = beer.bitterness;
+                row.insertCell(6).innerText = beer.sourness;
+                row.insertCell(7).innerText = beer.ABV;
+                row.insertCell(8).innerText = beer.food_pairing.join(", ");
+                row.insertCell(9).innerText = beer.taste.join(", ");
+                row.insertCell(10).innerHTML = `<img src="${beer.image_path}" alt="${beer.name}" height="100">`;
+                row.insertCell(11).innerText = beer.rating;
             });
         })
         .catch(error => console.error('Error:', error));

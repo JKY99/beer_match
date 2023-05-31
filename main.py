@@ -114,7 +114,7 @@ async def delete_user(user_id: str):
 #     result = await add_favorite_beer(user_id, beer_id)
 #     return result
 
-# # 이미지 파일 반환하기 ex) /data/img/카스.jpg
-# @app.get("/data/img/{filename}")
-# async def get_image(filename: str = Path(...)):
-#     return FileResponse(path=f"data/img/{filename}", media_type="image/jpeg")
+# 이미지 파일 반환하기 ex) /data/img/카스.jpg
+@app.get("/data/img/{filename}")
+async def get_image(filename: str = Path(...)):
+    return FileResponse(path=f"data/img/{filename}", media_type="image/jpeg")
