@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 from database.models import *
@@ -116,5 +117,5 @@ async def delete_user(user_id: str):
 
 # 이미지 파일 반환하기 ex) /data/img/카스.jpg
 @app.get("/data/img/{filename}")
-async def get_image(filename: str = Path(...)):
+async def get_image(filename: str):
     return FileResponse(path=f"data/img/{filename}", media_type="image/jpeg")
