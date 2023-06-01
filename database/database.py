@@ -1,7 +1,11 @@
 from datetime import datetime
+
 from database.beer import *
 from database.user import *
+from database.user_search_history import *
+
 from database.connection import *
+from database.models import *
 
 async def find_user_favorites(user_id: str) -> dict:
     user_favorites = db.UserFavorites

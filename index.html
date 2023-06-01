@@ -41,7 +41,7 @@
                 row.insertCell(7).innerText = beer.ABV;
                 row.insertCell(8).innerText = beer.food_pairing.join(", ");
                 row.insertCell(9).innerText = beer.taste.join(", ");
-                row.insertCell(10).innerHTML = `<img src="${beer.image_path}" alt="${beer.name}" height="100">`;
+                row.insertCell(10).innerHTML = `<img src="https://${beer.image_path}" alt="${beer.name}" height="100">`;
                 row.insertCell(11).innerText = beer.rating;
             });
         })

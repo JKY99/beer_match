@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beer List</title>
+    <style>
+        /* 여기에 CSS 스타일을 추가합니다 */
+    </style>
+    <script>
+        // 페이지 로드가 완료되면 함수를 실행합니다
+        window.onload = function() {
+            // fetch 함수를 이용해 API에서 맥주 데이터를 가져옵니다.
+            // 실제 API 엔드포인트 URL로 교체해야 합니다
+            fetch('https://port-0-beer-match-lhe2blhxowpm3.sel4.cloudtype.app/beers') 
+                .then(response => response.json()) // API 응답을 JSON으로 변환합니다
+                .then(data => { // JSON 데이터를 처리합니다
+                    // 각 맥주 데이터에 대해 HTML 요소를 동적으로 생성하고 페이지에 삽입합니다
+                    data.forEach(beer => {
+                        // 맥주 정보를 담을 div를 생성합니다
+                        var beerDiv = document.createElement('div');
+
+                        // thumb div를 생성합니다
+                        var thumbDiv = document.createElement('div');
+                        thumbDiv.className = "thumb";
+                        var thumbLink = document.createElement('a');
+                        var thumbImg = document.createElement('img');
+                        thumbImg.src = "img/1cass.JPG"; // 맥주 이미지 경로를 설정합니다
+                        thumbImg.style = "width: 150px; height: 210px; margin-top: 0 auto;";
+                        
+                        // 클릭 중일 때 이미지 변경
+                        thumbImg.onmousedown = function() {
+                            thumbImg.src = "https://" + beer.image_path;
+                            console.log(thumbImg.src.toString());
+                        };
+
+                        // 클릭이 끝나면 원래 이미지로 변경
+                        thumbImg.onmouseup = function() {
+                            thumbImg.src = "img/1cass.JPG";
+                        };
+
+
+                        thumbLink.appendChild(thumbImg);
+                        thumbDiv.appendChild(thumbLink);
+
+                        // txtArea div를 생성합니다
+                        var txtAreaDiv = document.createElement('div');
+                        txtAreaDiv.className = "txt-area";
+                        var cntHeaderDiv = document.createElement('div');
+                        cntHeaderDiv.className = "cnt-header";
+                        var wineryP = document.createElement('p');
+                        wineryP.className = "winery";
+                        var wineryLink = document.createElement('a');
+                        wineryLink.textContent = beer.name; // 맥주 이름을 설정합니다
+                        wineryP.appendChild(wineryLink);
+                        cntHeaderDiv.appendChild(wineryP);
+
+                        // h3를 생성하고 맥주 이름과 카테고리를 추가합니다
+                        var h3 = document.createElement('h3');
+                        var btnViewLink = document.createElement('a');
+                        btnViewLink.className = "btnView";
+                        btnViewLink.textContent = beer.name + " , " + beer.category;
+                        h3.appendChild(btnViewLink);
+                        cntHeaderDiv.appendChild(h3);
+
+                        // 국가를 표시하는 span을 생성합니다
+                        var countrySpan = document.createElement('span');
+                        countrySpan.className = "country";
+                        countrySpan.textContent = beer.origin; // 맥주의 원산지를 설정합니다
+                        txtAreaDiv.appendChild(countrySpan);
+
+                        // 카테고리를 표시하는 span을 생성합니다
+                        var nationSpan = document.createElement('span');
+                        nationSpan.className = "nation";
+                        nationSpan.textContent = ", " + beer.category;
+                        txtAreaDiv.appendChild(nationSpan);
+
+                        beerDiv.appendChild(thumbDiv);
+                        beerDiv.appendChild(txtAreaDiv);
+
+                        // 페이지 body에 맥주 div를 추가합니다
+                        document.querySelector('.beer_list').appendChild(beerDiv);
+                    });
+                })
+                .catch(error => console.error('Error:', error)); // 에러를 콘솔에 출력합니다
+        };
+    </script>
+</head>
+<body>
+    <!-- 맥주 데이터는 여기에 동적으로 삽입됩니다 -->
+    <div class="beer_list"></div>
+</body>
+</html>

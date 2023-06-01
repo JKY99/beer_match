@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
-from database.models import *
+# from database.models import *
 from database.database import *
 
 app = FastAPI()
@@ -62,9 +62,10 @@ async def delete_beer(beer_id: str):
         raise HTTPException(status_code=404, detail="Beer not found")
     await BeerService.delete(beer_id)
     return {"message": "Beer has been deleted successfully"}
-#--------------------------------------Beer------------------------------------------
 
+#--------------------------------------Beer------------------------------------------
 #--------------------------------------User------------------------------------------
+
 # 새 사용자를 생성하는 API
 @app.post("/users", response_model=User)
 async def create_user(user: User):
@@ -101,6 +102,17 @@ async def delete_user(user_id: str):
     return {"message": "User has been deleted successfully"}
 
 #--------------------------------------User------------------------------------------
+#--------------------------------------UserSearchHistory------------------------------------------
+
+@app.post("/history/", response_model=UserSearchHistory)
+async def create_search_history(history: UserSearchHistory):
+    return await UserSearchHistoryService.create(history)
+
+@app.get("/history/{user_id}", response_model=List[UserSearchHistory])
+async def read_search_history_by_user(user_id: str):
+    return await UserSearchHistoryService.read_by_user(user_id)
+
+#--------------------------------------UserSearchHistory------------------------------------------
 
 
 # # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1
