@@ -104,13 +104,26 @@ async def delete_user(user_id: str):
 #--------------------------------------User------------------------------------------
 #--------------------------------------UserSearchHistory------------------------------------------
 
-@app.post("/history/", response_model=UserSearchHistory)
-async def create_search_history(history: UserSearchHistory):
+@app.post("/search-history/", response_model=UserSearchHistory)
+async def create_search_history(history: UserSearchHistory) -> UserSearchHistory:
     return await UserSearchHistoryService.create(history)
 
-@app.get("/history/{user_id}", response_model=List[UserSearchHistory])
-async def read_search_history_by_user(user_id: str):
-    return await UserSearchHistoryService.read_by_user(user_id)
+@app.get("/search-history/{user_id}", response_model=List[UserSearchHistory])
+async def read_search_history_by_user_id(user_id: str) -> List[UserSearchHistory]:
+    histories = await UserSearchHistoryService.read(user_id)
+    if histories:
+        return histories
+    else:
+        raise HTTPException(status_code=404, detail="Search histories not found")
+
+@app.get("/search-historys/", response_model=List[UserSearchHistory])
+async def read_all_search_histories() -> List[UserSearchHistory]:
+    return await UserSearchHistoryService.read_all()
+
+@app.delete("/search-history/{user_id}")
+async def delete_search_history(user_id: str) -> None:
+    await UserSearchHistoryService.delete(user_id)
+    return {"message": "Search histories deleted"}
 
 #--------------------------------------UserSearchHistory------------------------------------------
 
