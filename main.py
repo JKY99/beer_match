@@ -126,6 +126,14 @@ async def delete_search_history(user_id: str) -> None:
     return {"message": "Search histories deleted"}
 
 #--------------------------------------UserSearchHistory------------------------------------------
+#--------------------------------------BeerRecommender------------------------------------------
+
+@app.post("/recommend_beers/", response_model=List[Beer])
+async def recommend_beers(user_id: str):
+    beers = await BeerRecommender.match_beers(user_id)
+    return beers
+
+#--------------------------------------BeerRecommender------------------------------------------
 
 
 # # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1
