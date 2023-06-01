@@ -163,6 +163,19 @@ async def delete_user_favorites(user_id: str):
     return {"message": "User favorites deleted successfully."}
 
 #--------------------------------------UserFavoriteItem------------------------------------------
+#--------------------------------------BeerService------------------------------------------
+
+# Best Beer 추천 API: 알코올 도수가 높은 순으로 5개의 맥주 추천
+@app.get("/best_beers/", response_model=List[Beer])
+async def get_best_beers():
+    return await BeerService.get_best_beers()
+
+# Beginner Beer 추천 API: 알코올 도수가 낮은 순으로 5개의 맥주 추천
+@app.get("/beginner_beers/", response_model=List[Beer])
+async def get_beginner_beers():
+    return await BeerService.get_beginner_beers()
+
+#--------------------------------------BeerService------------------------------------------
 
 
 # # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1

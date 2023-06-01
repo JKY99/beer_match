@@ -5,6 +5,7 @@ from database.user import *
 from database.user_search_history import *
 from database.beer_recommender import *
 from database.user_favorite_item import *
+from database.beer_service import *
 
 from database.connection import *
 from database.models import *
