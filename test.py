@@ -15,7 +15,13 @@ def get_random_id(length: int = 10) -> str:
 # MongoDB에 연결합니다.
 collection = db.Beers
 
-print(asyncio.run(BeerRecommender.match_beers("xhruaazpkw")))
+# print("---------------------xhruaazpkw"+"---------------------")
+# asyncio.run(BeerRecommender.match_beers("xhruaazpkw"))
+# print("---------------------htdmmmzobb"+"---------------------")
+# asyncio.run(BeerRecommender.match_beers("htdmmmzobb"))
+print("---------------------kvyzfrqhom"+"---------------------")
+asyncio.run(BeerRecommender.match_beers("kvyzfrqhom"))
+
 # #_---------------------------------------------------사용자선호도 샘플생성-----------------------------------------------------------------------------------------
 # from random import choice, uniform
 # unique_origins = ['덴마크', '멕시코', '영국', '체코', '벨기에', '네덜란드', '한국', '중국', '미국', '독일', '아일랜드', '일본']
@@ -37,7 +43,7 @@ print(asyncio.run(BeerRecommender.match_beers("xhruaazpkw")))
 #             preferred_sweetness=round(uniform(1.0, 5.0), 1),  # 당도는 1.0에서 5.0 사이에서 랜덤 선택
 #             preferred_bitterness=round(uniform(1.0, 5.0), 1),  # 쓴맛은 1.0에서 5.0 사이에서 랜덤 선택
 #             preferred_sourness=round(uniform(1.0, 5.0), 1),  # 산미는 1.0에서 5.0 사이에서 랜덤 선택
-#             preferred_ABV=round(uniform(0, 100), 2),  # 알코올 도수는 0에서 100 사이에서 랜덤 선택
+#             preferred_ABV=round(uniform(0, 10), 2),  # 알코올 도수는 0에서 100 사이에서 랜덤 선택
 #             preferred_food_pairing=[choice(unique_food_pairings) for _ in range(3)],  # 3개의 선호 음식 매칭을 랜덤 선택
 #             preferred_taste=[choice(unique_tastes) for _ in range(3)]  # 3개의 선호 맛을 랜덤 선택
 #         )

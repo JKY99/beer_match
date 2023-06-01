@@ -134,6 +134,35 @@ async def recommend_beers(user_id: str):
     return beers
 
 #--------------------------------------BeerRecommender------------------------------------------
+#--------------------------------------UserFavoriteItem------------------------------------------
+
+# UserFavorites 생성 API
+@app.post("/user_favorites/", response_model=UserFavorites)
+async def create_user_favorites(user_favorites: UserFavorites):
+    return await UserFavoritesService.create(user_favorites)
+
+# UserFavorites 조회 API
+@app.get("/user_favorites/{user_id}", response_model=UserFavorites)
+async def read_user_favorites(user_id: str):
+    return await UserFavoritesService.read(user_id)
+
+# 모든 UserFavorites 조회 API
+@app.get("/user_favorites/", response_model=List[UserFavorites])
+async def read_all_user_favorites():
+    return await UserFavoritesService.read_all()
+
+# UserFavorites 업데이트 API
+@app.put("/user_favorites/{user_id}", response_model=UserFavorites)
+async def update_user_favorites(user_id: str, user_favorites: UserFavorites):
+    return await UserFavoritesService.update(user_id, user_favorites)
+
+# UserFavorites 삭제 API
+@app.delete("/user_favorites/{user_id}")
+async def delete_user_favorites(user_id: str):
+    await UserFavoritesService.delete(user_id)
+    return {"message": "User favorites deleted successfully."}
+
+#--------------------------------------UserFavoriteItem------------------------------------------
 
 
 # # 찜한 정보를 조회합니다.   ex) /userfavorites?user_id=user1

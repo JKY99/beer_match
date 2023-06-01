@@ -63,6 +63,7 @@ class BeerRecommender:
             beer_vector += cls.one_hot_encode(beer['taste'], cls.unique_tastes)
 
             similarity = cls.cosine_similarity(user_vector, beer_vector)
+            print(beer["name"]+": "+str(similarity))
             result_list.append((beer, similarity))  # 맥주와 그 유사도를 리스트에 추가
 
         # 유사도가 높은 순으로 정렬합니다.
